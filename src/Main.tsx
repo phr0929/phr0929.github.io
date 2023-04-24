@@ -11,7 +11,12 @@ const Main =  (()=> {
 
   return (
     <div className="App" onClick={()=>navigate('/avatar')}>
-        아바타
+       <div>
+          <div>아바타 수정</div>
+       </div>
+       <div>
+          아바타
+        </div>
     </div>
   );
 })
