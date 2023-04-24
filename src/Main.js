@@ -1,7 +1,9 @@
 
 import React, {Component} from 'react';
 import './App.css';  
+ 
 import { useNavigate } from 'react-router';
+import imgAvatar from './resource/avatar.svg';
 
 const Main =  (()=> {
 
@@ -15,7 +17,7 @@ const Main =  (()=> {
           <div>아바타 수정</div>
        </div>
        <div>
-          아바타
+          <img src={imgAvatar} alt='' style={{width:'100%',height:'100%'}}/>
         </div>
     </div>
   );
