@@ -2,39 +2,14 @@ import { useEffect, useState } from 'react';
 import '../App.css'
 import './radio.css'
 
-const Button =  (()=> {
-
-    const [radio,setRadio] = useState(1)
-    const [radio2,setRadio2] = useState(1)
-    const [radioBox,setRadioBox] = useState(1)
-    const [radioBox2,setRadioBox2] = useState(1)
-    const [radioBox3,setRadioBox3] = useState(1)
-
-    function radioCk(idx) {
-        return radio===idx?'radioOn':'radioOff';
-    }
-
-    function radio2Ck(idx) {
-        return radio2===idx?'radio2On':'radioOff';
-    }
-
-    function radioBoxCk(idx) {
-        return radioBox===idx?'radioBoxOn':'radioBoxOff';
-    }
-
-    function radioBox2Ck(idx) {
-        return radioBox2===idx?'radioBox2On':'radioBox2Off';
-    }
-
-    function radioBox3Ck(idx) {
-        return radioBox3===idx?'radioBox3On':'radioBox3Off';
-    }
+const Button =  (()=> { 
 
 
     const [rb1,setRb1] = useState('0')
     const [rb2,setRb2] = useState('0')
     const [rb3,setRb3] = useState('0')
     const [rb4,setRb4] = useState('0')
+    const [rb5,setRb5] = useState('0')
 
     const handleRadio1 = (e) => {
         setRb1(e.target.id)
@@ -50,6 +25,10 @@ const Button =  (()=> {
     
     const handleRadio4 = (e) => {
         setRb4(e.target.id)
+    }
+
+    const handleRadio5 = (e) => {
+        setRb5(e.target.id)
     }
 
     return (
@@ -128,7 +107,7 @@ const Button =  (()=> {
                       
                         <span>
                             <div/>
-                            <p className='dd'>Box 1</p>
+                            <p>Box 1</p>
                         </span>
                     </label>
                     <label class="radioStyle4">
@@ -136,7 +115,7 @@ const Button =  (()=> {
                     
                         <span>
                             <div/>
-                            <p className='dd'>Box 2</p>
+                            <p>Box 2</p>
                         </span>
                     </label>
                     <label class="radioStyle4">
@@ -144,7 +123,7 @@ const Button =  (()=> {
                        
                         <span>
                             <div/>
-                            <p className='dd'>Box 3</p>
+                            <p>Box 3</p>
                         </span>
                     </label>
                 </div>
@@ -153,52 +132,51 @@ const Button =  (()=> {
             </div>
 
         
-
-         
             <div className='radioButtonBoxStyle'>
-                <div className={radioBox3Ck(1)} onClick={()=>setRadioBox3(1)}>
-                    <div className='rb3Firstline'>
-                        <div className='rb3Title'>
-                            TITLE1
+                <label class="radioStyle5">
+                    <input type="radio" id="0" name="style5" checked={rb5 === "0"} onChange={handleRadio5}/>
+                    
+                    <span>
+                        <div className='rs5Title'>
+                            <div>TITLE 1</div>
+                            <p/>
                         </div>
-                        <div className='rb3Circle'>
-                            <div/>
+                        <div className='rs5Contents'>
+                            radio button contents
                         </div>
-                    </div>
-                    <div className='rb3LastLine'>
-                        radio button contents
-                    </div>
-                </div>
+                    </span>
+                </label>
 
-                <div className={radioBox3Ck(2)} onClick={()=>setRadioBox3(2)}>
-                    <div className='rb3Firstline'>
-                        <div className='rb3Title'>
-                            TITLE2
+                <label class="radioStyle5">
+                    <input type="radio" id="1" name="style5" checked={rb5 === "1"} onChange={handleRadio5}/>
+                    
+                    <span>
+                        <div className='rs5Title'>
+                            <div>TITLE 2</div>
+                            <p/>
                         </div>
-                        <div className='rb3Circle'>
-                            <div/>
+                        <div className='rs5Contents'>
+                            radio button contents
                         </div>
-                    </div>
-                    <div className='rb3LastLine'>
-                        radio button contents
-                    </div>
-                </div>
+                    </span>
+                </label>
 
-                <div className='radioBox3Disabled'>
-                    <div className='rb3Firstline'>
-                        <div className='rb3Title'>
-                            TITLE1
+                <label class="radioStyle5">
+                    <input type="radio" id="2" name="style5" checked={rb5 === "2"} disabled onChange={handleRadio5}/>
+                    
+                    <span>
+                        <div className='rs5Title'>
+                            <div>TITLE 3</div>
+                            <p/>
                         </div>
-                        <div className='rb3Circle'>
-                            <div/>
+                        <div className='rs5Contents'>
+                            radio button contents
                         </div>
-                    </div>
-                    <div className='rb3LastLine'>
-                        radio button contents
-                    </div>
-                </div>
+                    </span>
+                </label>
             </div>
-
+         
+             
         </div>
     );
 })
