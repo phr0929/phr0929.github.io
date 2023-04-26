@@ -5,6 +5,7 @@ import Main from './Main';
 import Avatar from './Avatar';
 import Button from './Button';
 import Radio from './Button/Radio';
+import { ReactComponent as Testing} from './resource/avatar.svg'
  
 function App() {
   return (
