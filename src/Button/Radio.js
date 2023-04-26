@@ -78,20 +78,20 @@ const Button =  (()=> {
                 <div className='radioButtonStyle'> 
                     <label className='radioStyle2'>
                         <input type="radio" name="style2" id='0' checked={rb2 === "0"} onChange={handleRadio2}/>
-                        <div className='rs2Circle'><div className='rs2CircleSpan'/></div>
+                        <div><div/></div>
                         <span>Normal 1</span>
                     </label>
 
                     <label className='radioStyle2'>
                         <input type="radio" name="style2" id='1' checked={rb2 === "1"} onChange={handleRadio2}/>
-                        <div className='rs2Circle'><div className='rs2CircleSpan'/></div>
+                        <div><div/></div>
                         <span>Normal 2</span>
                     </label>
 
                  
                     <label className='radioStyle2'>
                         <input type="radio" name="style2" id='2' disabled checked={rb2 === "2"} onChange={handleRadio2}/>
-                        <div className='rs2Circle'><div className='rs2CircleSpan'/></div>
+                        <div><div/></div>
                         <span>Normal 3</span>
                     </label>
                 </div>
@@ -125,87 +125,36 @@ const Button =  (()=> {
                 <div className='radioButtonStyle'>
                     <label class="radioStyle4">
                         <input type="radio" id="0" name="style4" checked={rb4 === "0"} onChange={handleRadio4}/>
-                        <span>Box 1</span>
+                      
+                        <span>
+                            <div/>
+                            <p className='dd'>Box 1</p>
+                        </span>
                     </label>
                     <label class="radioStyle4">
                         <input type="radio" id="1" name="style4" checked={rb4 === "1"} onChange={handleRadio4}/>
-                        <span>Box 2</span>
+                    
+                        <span>
+                            <div/>
+                            <p className='dd'>Box 2</p>
+                        </span>
                     </label>
                     <label class="radioStyle4">
                         <input type="radio" id="2" name="style4" disabled checked={rb4 === "2"} onChange={handleRadio4}/>
-                        <span>Box 3</span>
+                       
+                        <span>
+                            <div/>
+                            <p className='dd'>Box 3</p>
+                        </span>
                     </label>
                 </div>
 
 
             </div>
 
-            <div className='rowLayout'>
-                
-                <div className='radioButtonStyle'>
-                    <div className={radioCk(1)} onClick={()=>setRadio(1)}>
-                        <span><div/></span>
-                        Normal 1
-                    </div>
-                    <div className={radioCk(2)} onClick={()=>setRadio(2)}>
-                        <span><div/></span>
-                        Normal 2
-                    </div>
-                    <div className='radioDisabled'>
-                        <span><div/></span>
-                        Normal 3
-                    </div>
-                </div>
+        
 
-                <div className='radioButtonStyle'>
-                    <div className={radio2Ck(1)} onClick={()=>setRadio2(1)}>
-                        <span><div/></span>
-                        Normal 1
-                    </div>
-                    <div className={radio2Ck(2)} onClick={()=>setRadio2(2)}>
-                        <span><div/></span>
-                        Normal 2
-                    </div>
-                    <div className='radioDisabled'>
-                        <span><div/></span>
-                        Normal 3
-                    </div>
-                </div>
-            </div>
-           
-
-            <div className='rowLayout'>
-                <div className='radioButtonStyle'>
-                    <div className={radioBoxCk(1)} onClick={()=>setRadioBox(1)}>
-                      
-                        Box 1
-                    </div>
-                    <div className={radioBoxCk(2)} onClick={()=>setRadioBox(2)}>
-                        
-                        Box 2
-                    </div>
-                    <div className='radioBoxDisabled'>
-                         
-                        Box 3
-                    </div>
-                </div>
-
-                <div className='radioButtonStyle'>
-                    <div className={radioBox2Ck(1)} onClick={()=>setRadioBox2(1)}>
-                        <span><div/></span>
-                        <div className='radioBox2Text'>Box 1</div>
-                    </div>
-                    <div className={radioBox2Ck(2)} onClick={()=>setRadioBox2(2)}>
-                        <span><div/></span>
-                        <div className='radioBox2Text'>Box 1</div>
-                    </div>
-                    <div className='radioBox2Disabled'>
-                        <span><div/></span>
-                        <div className='radioBox2Text'>Box 1</div>
-                    </div>
-                </div>
-            </div>
-
+         
             <div className='radioButtonBoxStyle'>
                 <div className={radioBox3Ck(1)} onClick={()=>setRadioBox3(1)}>
                     <div className='rb3Firstline'>

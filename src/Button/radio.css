@@ -515,8 +515,7 @@
 
 
 .radioStyle3{
-    width: 100px;
-    height : 40px;
+    font-size: 14px;
 }
 .radioStyle3 input[type=radio] {
     display: none;
@@ -561,9 +560,8 @@
 
 
 
-.radioStyle4{
-    width: 100px;
-    height : 40px;
+.radioStyle4{ 
+    font-size: 14px;
 }
 .radioStyle4 input[type=radio] {
     display: none;
@@ -571,35 +569,70 @@
 .radioStyle4 span {
     text-align: center;
     height: 40px;
-    width: 100px;
+    width: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border:1px solid #dcdcdc;
     box-sizing: border-box;
+    border-radius: 50px;
+    border: 1px solid #dcdcdc;
+    color: #dcdcdc;
+}
+
+.radioStyle4 span >div{
+    border: 2px solid #dcdcdc;
+    border-radius: 250px;
+    width: 15px;
+    min-width: 15px;
+    max-width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+    margin-left:15px;
+    margin-right:15px;
 }
  
 /* Checked */
 .radioStyle4 input[type=radio]:checked + span {
-    border: 3px solid #ee8432;
-    color: #ee8432;
+    border: 1px solid #323232;
+    background-color: #323232;
+    color: #ffffff;
     font-weight: 700;
 }
   
+.radioStyle4 input[type=radio]:checked + span >div {
+    border: 3px solid #ffffff;
+    border-radius: 250px;
+    width: 15px;
+    min-width: 15px;
+    max-width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+}
+
 /* Disabled */
 .radioStyle4 input[type=radio] + label { 
     color:#dcdcdc;
 }
 
 .radioStyle4 input[type=radio]:disabled + span{ 
-    text-align: center;
-    height: 40px;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border:1px solid #f3f3f3;
     background-color: #f3f3f3;
     color: #dcdcdc;
-    box-sizing: border-box;  
 }  
+
+.radioStyle4 input[type=radio]:disabled + span >div {
+    border: 2px solid #dcdcdc;
+    border-radius: 250px;
+    width: 15px;
+    min-width: 15px;
+    max-width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+}
+
+.dd{
+    width:100%;
+    text-align: right;
+    padding-right:15px;
+    box-sizing: border-box;
+}
