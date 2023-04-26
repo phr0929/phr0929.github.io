@@ -11,17 +11,6 @@
     justify-content: center;
 }
 
-.buttonStyle{
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.buttonStyle div{
-    margin:10px;
-}
 
 .button0{
     background-color: #ffffff;

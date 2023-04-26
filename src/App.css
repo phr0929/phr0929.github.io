@@ -36,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+ 
 .mainLayout{
   padding:15px;
   box-sizing: border-box;
@@ -47,4 +48,33 @@
   width: 100vw;
   align-items: center;
   justify-content: center;
+}
+
+
+.rowLayout{
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonStyle{
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.margin{
+  margin:10px;
+}
+
+.menuList{
+  display: flex;
+  flex-direction: column;
+}
+
+.menuList div{
+  padding: 15px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dcdcdc;
 }

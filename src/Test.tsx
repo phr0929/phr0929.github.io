@@ -1,11 +1,10 @@
 
-import React, {Component} from 'react';
-import './App.css';  
- 
-import { useNavigate } from 'react-router';
-import imgAvatar from './resource/avatar.svg';
+import React from 'react'
+import './App.css'
+import { ReactComponent as Testing} from './resource/avatar.svg'
+import { useNavigate } from 'react-router'
 
-const Main =  (()=> {
+const Test =  ()=> {
 
   
   const navigate = useNavigate()
@@ -20,6 +19,6 @@ const Main =  (()=> {
         
     </div>
   );
-})
+}
 
-export default Main;
+export default Test;

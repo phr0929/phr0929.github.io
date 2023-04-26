@@ -1,0 +1,364 @@
+.radioButtonStyle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width:200px;
+    box-shadow: 3px 3px 15px #dcdcdc;
+    border-radius: 10px;
+    padding:15px;
+    margin:15px;
+}
+
+
+.radioButtonStyle >div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:10px;
+}
+
+.radioOn >span{
+    height: 15px;
+    width:15px;
+    border-radius: 250px;
+    border:2px solid #ee8432;
+    margin-right:8px;
+    padding:2px;
+    box-sizing: border-box;
+}
+
+.radioOn >span >div{
+    width:100%;
+    height:100%;
+    border-radius: 250px;
+    background-color: #ee8432;   
+}
+
+.radioOff >span{
+    
+    height: 15px;
+    width:15px;
+    border-radius: 250px;
+    border:2px solid #cccccc;
+    margin-right:8px;
+    padding:2px;
+    box-sizing: border-box;
+
+}
+
+.radioOff >span >div{
+    width:100%;
+    height:100%;
+    border-radius: 250px;
+}
+
+
+
+
+
+
+
+.radioDisabled >span{
+    
+    height: 15px;
+    width:15px;
+    border-radius: 250px;
+    border:2px solid #cccccc;
+    margin-right:8px;
+    padding:2px;
+    box-sizing: border-box;
+
+}
+
+.radioDisabled >span >div{
+    width:100%;
+    height:100%;
+    border-radius: 250px;
+    background-color: #cccccc;   
+}
+
+
+
+
+
+
+
+
+.radio2On >span{
+    height: 15px;
+    width:15px;
+    border-radius: 250px;
+    border:5px solid #ee8432;
+    margin-right:8px;
+    box-sizing: border-box;
+}
+
+.radio2On >span >div{
+    width:100%;
+    height:100%;
+    border-radius: 250px;
+    background-color: #ffffff;   
+}
+
+
+.radioBoxOn{
+    width:100px;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border:2px solid #ee8432;
+    color:#ee8432;
+    font-weight: 700;
+}
+
+.radioBoxOff{
+    width:100px;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border:1px solid #dcdcdc;
+    color:#dcdcdc;
+}
+
+.radioBoxDisabled{
+    width:100px;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    color:#dcdcdc;
+    background-color: #f3f3f3;
+}
+
+
+
+
+
+.radioBox2On{
+    width:130px;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #323232;
+    border-radius: 50px;
+    color:#ffffff;
+    font-weight: 700;
+}
+
+.radioBox2Off{
+    width:130px;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border:1px solid #dcdcdc;
+    border-radius: 50px;
+    color:#dcdcdc;
+}
+
+.radioBox2Disabled{
+    width:130px;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    color:#dcdcdc;
+    border-radius: 50px;
+    background-color: #f3f3f3;
+}
+
+
+
+
+.radioBox2Text{
+    width: 100%;
+    padding-right:15px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+
+.radioBox2On >span{
+    height: 15px;
+    width:15px;
+    min-width: 15px;
+    max-width: 15px;
+    border-radius: 250px;
+    margin-left:15px;
+    margin-right:15px;
+    padding:3px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.radioBox2On >span >div{
+    width:100%;
+    height:100%;
+    border-radius: 250px;
+    background-color: #323232;   
+}
+
+.radioBox2Off >span{
+    
+    height: 15px;
+    width:15px;
+    min-width: 15px;
+    max-width: 15px;
+    border-radius: 250px;
+    margin-left:15px;
+    margin-right:15px;
+    padding:3px;
+    border:2px solid #cccccc;
+    box-sizing: border-box;
+
+}
+
+.radioBox2Off >span >div{
+    width:100%;
+    height:100%;
+    border-radius: 250px;
+}
+
+
+
+
+
+
+
+.radioBox2Disabled >span{ 
+    height: 15px;
+    width:15px;
+    min-width: 15px;
+    max-width: 15px;
+    border-radius: 250px;
+    margin-left:15px;
+    margin-right:15px;
+    padding:3px;
+    border:2px solid #cccccc;
+    box-sizing: border-box;
+
+}
+
+.radioDisabled >span >div{
+    width:100%;
+    height:100%;
+    border-radius: 250px;
+    background-color: #cccccc;   
+}
+
+
+
+
+.radioButtonBoxStyle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:15px;
+}
+
+
+
+.radioBox3On{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width:150px;
+    box-shadow: 3px 3px 15px #dcdcdc;
+    border:2px solid #ee8432;
+    border-radius: 15px;
+    padding:15px;
+    margin:10px;
+    box-sizing: border-box;
+}
+
+.radioBox3Off{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width:150px;
+    box-shadow: 3px 3px 15px #dcdcdc;
+    border-radius: 15px;
+    padding:15px;
+    margin:10px;
+    box-sizing: border-box;
+}
+
+.radioBox3Disabled{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width:150px;
+    max-width: 150px;
+    box-shadow: 3px 3px 15px #dcdcdc;
+    border-radius: 15px;
+    padding:15px;
+    margin:10px;
+    color:#dcdcdc;
+}
+
+.rb3Firstline{
+    padding-top:5px;
+    padding-bottom:15px;
+    width:100%;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.rb3Title{
+    width: 100%;
+}
+.radioBox3On .rb3Circle{
+    width:15px;
+    min-width: 15px;
+    max-width: 15px;
+    height:15px;
+    box-sizing: border-box;
+    padding:2px;
+    border:5px solid #ee8432;
+    border-radius: 250px;
+}
+
+.radioBox3Off .rb3Circle{
+    width:15px;
+    min-width: 15px;
+    max-width: 15px;
+    height:15px;
+    box-sizing: border-box;
+    padding:2px;
+    border:5px solid #dcdcdc;
+    border-radius: 250px;
+}
+
+.radioBox3Disabled .rb3Circle{
+    width:15px;
+    min-width: 15px;
+    max-width: 15px;
+    height:15px;
+    box-sizing: border-box;
+    padding:2px;
+    background-color: #f3f3f3;
+    border-radius: 250px;
+}
+
+
+.rb3LastLine{
+    width:100%;
+    font-size: 13px;
+    text-align: left;
+}
