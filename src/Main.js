@@ -12,9 +12,10 @@ const Main =  (()=> {
 
 
   return (
-    <div className="App" onClick={()=>navigate('/button')}>
-       <div>
-          <div>버튼 스타일</div>
+    <div className="App">
+       <div className='menuList'>
+          <div onClick={()=>navigate('/button')}>버튼 스타일</div>
+          <div onClick={()=>navigate('/button/radio')}>라디오버튼</div>
        </div>
         
     </div>

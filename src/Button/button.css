@@ -1,26 +1,4 @@
-.mainLayout{
-    padding:15px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #f3f3f3;
-    height: 100vh;
-    width: 100vw;
-    align-items: center;
-}
 
-.buttonStyle{
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.buttonStyle div{
-    margin:10px;
-}
 
 .button0{
     background-color: #ffffff;

@@ -4,6 +4,7 @@ import './App.css';
 import Main from './Main';
 import Avatar from './Avatar';
 import Button from './Button';
+import Radio from './Button/Radio';
  
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
               <Route path="/" element={<Main/>} /> 
               <Route path="/avatar" element={<Avatar/>} /> 
               <Route path="/button" element={<Button/>} /> 
+              <Route path="/button/radio" element={<Radio/>}/>
             </Routes>
         </HashRouter>
       </React.StrictMode>
