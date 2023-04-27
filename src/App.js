@@ -5,6 +5,7 @@ import Main from './Main';
 import Avatar from './Avatar';
 import Button from './Button';
 import Radio from './Button/Radio';
+import RadioButton from './Button/RadioButton';
 import { ReactComponent as Testing} from './resource/avatar.svg'
  
 function App() {
@@ -17,6 +18,7 @@ function App() {
               <Route path="/avatar" element={<Avatar/>} /> 
               <Route path="/button" element={<Button/>} /> 
               <Route path="/button/radio" element={<Radio/>}/>
+              <Route path="/button/radiobutton" element={<RadioButton/>}/>
             </Routes>
         </HashRouter>
       </React.StrictMode>

@@ -1,274 +1,20 @@
-.radioButtonStyle{
+.rbStyle{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     background-color: #ffffff;
-    width:200px;
+    width: 460px;
     box-shadow: 3px 3px 15px #dcdcdc;
     border-radius: 10px;
     padding:15px;
-    margin:15px;
+    margin:5px;
 }
+ 
+  
 
 
-.radioButtonStyle >div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin:10px;
-}
-
-
-.radioButtonStyle >label{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin:10px;
-}
-
-
-.radioOn >span{
-    height: 15px;
-    width:15px;
-    border-radius: 250px;
-    border:2px solid #ee8432;
-    margin-right:8px;
-    padding:2px;
-    box-sizing: border-box;
-}
-
-.radioOn >span >div{
-    width:100%;
-    height:100%;
-    border-radius: 250px;
-    background-color: #ee8432;   
-}
-
-.radioOff >span{
-    
-    height: 15px;
-    width:15px;
-    border-radius: 250px;
-    border:2px solid #cccccc;
-    margin-right:8px;
-    padding:2px;
-    box-sizing: border-box;
-
-}
-
-.radioOff >span >div{
-    width:100%;
-    height:100%;
-    border-radius: 250px;
-}
-
-
-
-
-
-
-
-.radioDisabled >span{
-    
-    height: 15px;
-    width:15px;
-    border-radius: 250px;
-    border:2px solid #cccccc;
-    margin-right:8px;
-    padding:2px;
-    box-sizing: border-box;
-
-}
-
-.radioDisabled >span >div{
-    width:100%;
-    height:100%;
-    border-radius: 250px;
-    background-color: #cccccc;   
-}
-
-
-
-
-
-
-
-
-.radio2On >span{
-    height: 15px;
-    width:15px;
-    border-radius: 250px;
-    border:5px solid #ee8432;
-    margin-right:8px;
-    box-sizing: border-box;
-}
-
-.radio2On >span >div{
-    width:100%;
-    height:100%;
-    border-radius: 250px;
-    background-color: #ffffff;   
-}
-
-
-.radioBoxOn{
-    width:100px;
-    height:40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    border:2px solid #ee8432;
-    color:#ee8432;
-    font-weight: 700;
-}
-
-.radioBoxOff{
-    width:100px;
-    height:40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    border:1px solid #dcdcdc;
-    color:#dcdcdc;
-}
-
-.radioBoxDisabled{
-    width:100px;
-    height:40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    color:#dcdcdc;
-    background-color: #f3f3f3;
-}
-
-
-
-
-
-.radioBox2On{
-    width:130px;
-    height:40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    background-color: #323232;
-    border-radius: 50px;
-    color:#ffffff;
-    font-weight: 700;
-}
-
-.radioBox2Off{
-    width:130px;
-    height:40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    border:1px solid #dcdcdc;
-    border-radius: 50px;
-    color:#dcdcdc;
-}
-
-.radioBox2Disabled{
-    width:130px;
-    height:40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    color:#dcdcdc;
-    border-radius: 50px;
-    background-color: #f3f3f3;
-}
-
-
-
-
-.radioBox2Text{
-    width: 100%;
-    padding-right:15px;
-    box-sizing: border-box;
-    text-align: right;
-}
-
-
-.radioBox2On >span{
-    height: 15px;
-    width:15px;
-    min-width: 15px;
-    max-width: 15px;
-    border-radius: 250px;
-    margin-left:15px;
-    margin-right:15px;
-    padding:3px;
-    background-color: #ffffff;
-    box-sizing: border-box;
-}
-
-.radioBox2On >span >div{
-    width:100%;
-    height:100%;
-    border-radius: 250px;
-    background-color: #323232;   
-}
-
-.radioBox2Off >span{
-    
-    height: 15px;
-    width:15px;
-    min-width: 15px;
-    max-width: 15px;
-    border-radius: 250px;
-    margin-left:15px;
-    margin-right:15px;
-    padding:3px;
-    border:2px solid #cccccc;
-    box-sizing: border-box;
-
-}
-
-.radioBox2Off >span >div{
-    width:100%;
-    height:100%;
-    border-radius: 250px;
-}
-
-
-
-
-
-
-
-.radioBox2Disabled >span{ 
-    height: 15px;
-    width:15px;
-    min-width: 15px;
-    max-width: 15px;
-    border-radius: 250px;
-    margin-left:15px;
-    margin-right:15px;
-    padding:3px;
-    border:2px solid #cccccc;
-    box-sizing: border-box;
-
-}
-
-.radioDisabled >span >div{
-    width:100%;
-    height:100%;
-    border-radius: 250px;
-    background-color: #cccccc;   
-}
-
-
-
-
-.radioButtonBoxStyle{
+.rbbStyle{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -276,127 +22,23 @@
 }
 
 
-
-.radioBox3On{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    width:150px;
-    box-shadow: 3px 3px 15px #dcdcdc;
-    border:2px solid #ee8432;
-    border-radius: 15px;
-    padding:15px;
-    margin:10px;
-    box-sizing: border-box;
-}
-
-.radioBox3Off{
-    border:2px solid #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    width:150px;
-    box-shadow: 3px 3px 15px #dcdcdc;
-    border-radius: 15px;
-    padding:15px;
-    margin:10px;
-    box-sizing: border-box;
-}
-
-.radioBox3Disabled{
-    border:2px solid #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    width:150px;
-    box-shadow: 3px 3px 15px #dcdcdc;
-    border-radius: 15px;
-    border-radius: 15px;
-    padding:15px;
-    margin:10px;
-    box-sizing: border-box;
-    color:#dcdcdc;
-}
-
-.rb3Firstline{
-    padding-top:5px;
-    padding-bottom:15px;
-    width:100%;
-    font-weight: 700;
-    font-size: 15px;
-    text-align: left;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.rb3Title{
-    width: 100%;
-}
-.radioBox3On .rb3Circle{
-    width:15px;
-    min-width: 15px;
-    max-width: 15px;
-    height:15px;
-    box-sizing: border-box;
-    padding:2px;
-    border:5px solid #ee8432;
-    border-radius: 250px;
-}
-
-.radioBox3Off .rb3Circle{
-    width:15px;
-    min-width: 15px;
-    max-width: 15px;
-    height:15px;
-    box-sizing: border-box;
-    padding:2px;
-    border:5px solid #dcdcdc;
-    border-radius: 250px;
-}
-
-.radioBox3Disabled .rb3Circle{
-    width:15px;
-    min-width: 15px;
-    max-width: 15px;
-    height:15px;
-    box-sizing: border-box;
-    padding:2px;
-    background-color: #f3f3f3;
-    border-radius: 250px;
-}
+ 
 
 
-.rb3LastLine{
-    width:100%;
-    font-size: 13px;
-    text-align: left;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.radioStyle1{
+.rs1{
     font-size:14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px 0px 10px;
 }
 
-.radioStyle1 span {
+.rs1 span {
     margin-left:10px;
 }
    
 
-.radioStyle1 [type="radio"]{ 
+.rs1 [type="radio"]{ 
     appearance: none;
     margin:0px;
     padding:0px;
@@ -405,24 +47,23 @@
     border-radius: 250px;
     width: 15px;
     height: 15px;
-    /* transition: border 0.1s ease-in-out; */
 }
  
-.radioStyle1 [type="radio"]:checked {
+.rs1 [type="radio"]:checked {
     box-sizing: border-box;
     border: 5px solid #ee8432;
 }
 
-.radioStyle1 [type="radio"]:focus-visible {
+.rs1 [type="radio"]:focus-visible {
     outline: none;
 }
  
 
-.radioStyle1 [type="radio"]:disabled {
+.rs1 [type="radio"]:disabled {
     background-color: #dcdcdc; 
 }
 
-.radioStyle1 [type="radio"]:disabled + span {
+.rs1 [type="radio"]:disabled + span {
     color:#dcdcdc;
 }
  
@@ -431,22 +72,21 @@
 
 
 
-.radioStyle2{
+.rs2{
     font-size:14px;
 }
 
-.radioStyle2 span {
+.rs2 span {
     margin-left:10px;
 }
   
 
-.radioStyle2 [type="radio"]{ 
+.rs2 [type="radio"]{ 
     display: none;
     
-    /* transition: border 0.1s ease-in-out; */
 }
 
-.radioStyle2 >div { 
+.rs2 >div { 
     height: 15px;
     width:15px;
     min-width: 15px;
@@ -457,7 +97,7 @@
     box-sizing: border-box;
 }
  
-.radioStyle2 >div>span {
+.rs2 >div>span {
     width:100%;
     height:100%;
     border-radius: 250px;
@@ -465,8 +105,7 @@
 }
  
 
-/* Checked */
-.radioStyle2 input[type=radio]:checked + div{ 
+.rs2 input[type=radio]:checked + div{ 
     height: 15px;
     width:15px;
     min-width: 15px;
@@ -477,7 +116,7 @@
     box-sizing: border-box;
 } 
 
-.radioStyle2 input[type=radio]:checked + div > div{ 
+.rs2 input[type=radio]:checked + div > div{ 
     width:100%;
     height:100%;
     border-radius: 250px;
@@ -485,7 +124,7 @@
 } 
  
 
-.radioStyle2 input[type=radio]:disabled + div{ 
+.rs2 input[type=radio]:disabled + div{ 
     height: 15px;
     width:15px;
     min-width: 15px;
@@ -496,26 +135,27 @@
     box-sizing: border-box;
 } 
 
-.radioStyle2 input[type=radio]:disabled + div > div{ 
+.rs2 input[type=radio]:disabled + div > div{ 
     width:100%;
     height:100%;
     border-radius: 250px;
     background-color: #dcdcdc;   
 }  
 
-.radioStyle2 input[type=radio]:disabled + div + span{ 
+.rs2 input[type=radio]:disabled + div + span{ 
     color:#dcdcdc;
 }  
 
 
 
-.radioStyle3{
+.rs3{
     font-size: 14px;
+    margin:0px 5px 0px 5px;
 }
-.radioStyle3 input[type=radio] {
+.rs3 input[type=radio] {
     display: none;
 }
-.radioStyle3 span {
+.rs3 span {
     text-align: center;
     height: 40px;
     width: 100px;
@@ -526,19 +166,17 @@
     box-sizing: border-box;
 }
  
-/* Checked */
-.radioStyle3 input[type=radio]:checked + span {
+.rs3 input[type=radio]:checked + span {
     border: 3px solid #ee8432;
     color: #ee8432;
     font-weight: 700;
 }
   
-/* Disabled */
-.radioStyle3 input[type=radio] + label { 
+.rs3 input[type=radio] + label { 
     color:#dcdcdc;
 }
 
-.radioStyle3 input[type=radio]:disabled + span{ 
+.rs3 input[type=radio]:disabled + span{ 
     text-align: center;
     height: 40px;
     width: 100px;
@@ -555,13 +193,14 @@
 
 
 
-.radioStyle4{ 
+.rs4{ 
     font-size: 14px;
+    margin:0px 10px 0px 10px;
 }
-.radioStyle4 input[type=radio] {
+.rs4 input[type=radio] {
     display: none;
 }
-.radioStyle4 span {
+.rs4 span {
     text-align: center;
     height: 40px;
     width: 120px;
@@ -574,7 +213,7 @@
     color: #dcdcdc;
 }
 
-.radioStyle4 span >div{
+.rs4 span >div{
     border: 2px solid #dcdcdc;
     border-radius: 250px;
     width: 15px;
@@ -586,15 +225,14 @@
     margin-right:15px;
 }
  
-/* Checked */
-.radioStyle4 input[type=radio]:checked + span {
+.rs4 input[type=radio]:checked + span {
     border: 1px solid #323232;
     background-color: #323232;
     color: #ffffff;
     font-weight: 700;
 }
   
-.radioStyle4 input[type=radio]:checked + span >div {
+.rs4 input[type=radio]:checked + span >div {
     border: 3px solid #ffffff;
     border-radius: 250px;
     width: 15px;
@@ -604,18 +242,17 @@
     box-sizing: border-box;
 }
 
-/* Disabled */
-.radioStyle4 input[type=radio] + label { 
+.rs4 input[type=radio] + label { 
     color:#dcdcdc;
 }
 
-.radioStyle4 input[type=radio]:disabled + span{ 
+.rs4 input[type=radio]:disabled + span{ 
     border:1px solid #f3f3f3;
     background-color: #f3f3f3;
     color: #dcdcdc;
 }  
 
-.radioStyle4 input[type=radio]:disabled + span >div {
+.rs4 input[type=radio]:disabled + span >div {
     border: 2px solid #dcdcdc;
     border-radius: 250px;
     width: 15px;
@@ -625,7 +262,7 @@
     box-sizing: border-box;
 }
 
-.radioStyle4 p{
+.rs4 p{
     width:100%;
     text-align: right;
     padding-right:15px;
@@ -640,13 +277,13 @@
 
 
 
-.radioStyle5{ 
+.rs5{ 
     font-size: 14px;
 }
-.radioStyle5 input[type=radio] {
+.rs5 input[type=radio] {
     display: none;
 }
-.radioStyle5 span {
+.rs5 span {
     text-align: center;
     height: auto;
     width: 150px;
@@ -663,7 +300,7 @@
     border: 2px solid #ffffff;
 }
 
-.rs5Title{
+.r5Title{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -673,12 +310,12 @@
     align-items: center;
 }
 
-.rs5Title >div{
+.r5Title >div{
     width: 100%;
     text-align: left;
 }
 
-.rs5Title >p{
+.r5Title >p{
     margin:0px;
     width: 15px;
     min-width: 15px;
@@ -690,29 +327,30 @@
     box-sizing: border-box;
 }
 
-.rs5Contents{
+.r5Contents{
     width: 100%;
     text-align: left;
     font-size: 13px;
     padding-bottom: 5px;
 }
 
-.radioStyle5 input[type=radio]:checked + span {
+.rs5 input[type=radio]:checked + span {
     border: 2px solid #ee8432;
+    background-color: #fff5ee;
 }
 
-.radioStyle5 input[type=radio]:checked + span > div >p {
+.rs5 input[type=radio]:checked + span > div >p {
     border: 5px solid #ee8432;
     width: 100%;
     height: 100%;
 }
 
 
-.radioStyle5 input[type=radio]:disabled + span {
+.rs5 input[type=radio]:disabled + span {
     color:#dcdcdc;
 }
 
-.radioStyle5 input[type=radio]:disabled + span > div >p {
+.rs5 input[type=radio]:disabled + span > div >p {
     background-color: #f3f3f3;
     border: 0px;
     width: 100%;
