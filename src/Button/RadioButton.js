@@ -7,29 +7,46 @@ const RadioButton =  (()=> {
 
     return (
         <div className="radioLayout">
-   <div className='radioButtonStyle'>
-    <label className='radioStyle'>
-        <input type="radio" name="radio" checked/>
-        <span>
-            <div/>
-            <p>Box 1</p>
-        </span>
-    </label>
-    <label className='radioStyle'>
-        <input type="radio" name="radio"/>
-        <span>
-            <div/>
-            <p>Box 2</p>
-        </span>
-    </label>
-    <label className='radioStyle'>
-        <input type="radio" name="radio" disabled/>
-        <span>
-            <div/>
-            <p>Box 3</p>
-        </span>
-    </label>
-</div>
+           <div className='radioButtonStyle'>
+            <label className='radioStyle'>
+                <input type='radio' checked name='radio'/>
+                <span>
+                    <div className='rsTitle'>
+                        <div>TITLE</div>
+                        <p/>
+                    </div>
+                    <div className='rsContents'>
+                        radio button contents
+                    </div>
+                </span>
+            </label>
+
+            <label className='radioStyle'>
+                <input type='radio' name='radio'/>
+                <span>
+                    <div className='rsTitle'>
+                        <div>TITLE 2</div>
+                        <p/>
+                    </div>
+                    <div className='rsContents'>
+                        radio button contents
+                    </div>
+                </span>
+            </label>
+
+            <label className='radioStyle'>
+                <input type='radio' disabled name='radio'/>
+                <span>
+                    <div className='rsTitle'>
+                        <div>TITLE 3</div>
+                        <p/>
+                    </div>
+                    <div className='rsContents'>
+                        radio button contents
+                    </div>
+                </span>
+            </label>
+           </div>
         </div>
     );
 })

@@ -16,7 +16,7 @@ const Main =  (()=> {
        <div className='menuList'>
           <div onClick={()=>navigate('/button')}>버튼 스타일</div>
           <div onClick={()=>navigate('/button/radio')}>라디오버튼</div>
-          <div onClick={()=>navigate('/button/radiobutton')}>라디오버튼2</div>
+          <div onClick={()=>navigate('/animation')}>애니메이션</div>
        </div>
         
     </div>
