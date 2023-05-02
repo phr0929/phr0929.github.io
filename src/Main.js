@@ -17,6 +17,7 @@ const Main =  (()=> {
           <div onClick={()=>navigate('/button')}>버튼 스타일</div>
           <div onClick={()=>navigate('/button/radio')}>라디오버튼</div>
           <div onClick={()=>navigate('/animation')}>애니메이션</div>
+          <div onClick={()=>navigate('/game')}>똥피하기 게임</div>
        </div>
         
     </div>
