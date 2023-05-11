@@ -4,6 +4,23 @@ import './mbti.css'
 
 const Mbti =  (()=> {
 
+  const setOneVh = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    
+};
+
+useEffect(()=>{
+
+  setOneVh();
+        
+  function onResize(){ 
+      setOneVh();
+  }
+
+  window.addEventListener('resize',onResize);
+
+},[])
   const [page,setPage] = useState(0)
   const [yourMbti,setYourMbti] = useState('')
   const [mbtiList,setMbtiList] = useState([
@@ -16,136 +33,243 @@ const Mbti =  (()=> {
   
   const questionList = [
     {
-      q:'나 요즘 너무 우울해서 여행을 가려고...',
-      a:[{type:'f',text:'무슨 일 있어? 왜 우울해? 괜찮아?'},
+      q:['나 요즘 너무 우울해서','여행 가려고...'],
+      a:[{type:'f',text:'무슨 일 있어?'},
               {type:'t',text:'어디로 여행가게?'}],
     },
+    
     {
-      q:'아침에 알람이 울렸다.',
-      a:[{type:'p',text:'5분만 더...'},
-             {type:'j',text:'바로 일어나서 준비한다'}],
-    }, 
+      q:['슬픔을 나누면 어떻게될까?'],
+      a:[{type:'f',text:'슬픔이 반이 되지'},
+              {type:'t',text:'슬픈 사람이 둘이 되겠지'}],
+    },
+    
     {
-      q:'수학 문제를 풀 때?',
-      a:[{type:'j',text:'배운 공식대로, 교과서에 나온대로 문제를 풀어보자.'},
-             {type:'p',text:'다른 방법으로도 풀 수 있지않을까?'}],
+      q:['자살의 반대말은 뭘까?'],
+      a:[{type:'f',text:'살자!'},
+              {type:'t',text:'타살?'}],
+    },
+    
+    {
+      q:['나 시험에서 떨어졌어...ㅠㅠ'],
+      a:[{type:'f',text:'아고, 많이 속상하겠다ㅠㅠ'},
+              {type:'t',text:'무슨 시험 봤는데? 몇점 받았는데?'}],
+    },
+    
+    {
+      q:['나 차 사고났어...ㅠㅠ'],
+      a:[{type:'f',text:'많이 안 다쳤어? 괜찮아?'},
+              {type:'t',text:'보험사에는 연락 했어??'}],
+    },
+    
+    {
+      q:['너랑 나랑 좀 안 맞는듯;'],
+      a:[{type:'f',text:'아...그렇구나...(상처)'},
+              {type:'t',text:'왜? 그렇게 생각한 이유가 뭐야?'}],
+    },
+    
+    {
+      q:['우리 매주 @@@ 하지 않을래?'],
+      a:[{type:'f',text:'생각해볼게 (아 싫은데... 바로 거절하긴 미안하니까 대충 둘러대야지;)'},
+              {type:'t',text:'생각해볼게 (진짜 생각해보는중)'}],
+    },
+    
+    {
+      q:['~ 썸남/썸녀랑 대화중 ~'],
+      a:[{type:'f',text:'와 정말요? 대박! 진짜 최고다, 너무 웃겨요!'},
+              {type:'t',text:'취미가 뭐예요? 영화 보는거 좋아해요? 무슨 음식 좋아해요?'}],
+    },
+     
+    {
+      q:['나 오늘 지각해서 부장님한테 깨졌어...'],
+      a:[{type:'f',text:'속상했겠네... 괜찮아?'},
+              {type:'t',text:'그러게 어제 빨리 자라니까~'}],
+    },
+     
+    
+    
+    
+    
+    
+    
+    {
+      q:['여행 일정 짰어?'],
+      a:[{type:'j',text:'7시30분 만남, 8시 할매국밥, 9시 유리박물관, 11시 유리해수욕장, 12시 유리카페...'},
+          {type:'p',text:'ㅇㅇ 국밥 먹고 바다가서 놀다가 카페가자'}],
+    },
+    
+    {
+      q:['아 원래 계획보다 너무 늦어졌네;;;'],
+      a:[{type:'j',text:'아...짜증난다 진짜'},
+          {type:'p',text:'어쩔 수 없지 뭐~'}],
+    },
+    
+    {
+      q:['안읽은메시지 갯수 몇개야?'],
+      a:[{type:'j',text:'0개 ~ 한자리수'},
+          {type:'p',text:'10개 이상'}],
+    },
+    
+    {
+      q:['내일까지 맛있는 치킨에 대해','발표 준비 해 오세요.'],
+      a:[{type:'j',text:'일단 어떻게 할지 계획을 좀 짜보자! 어느 브랜드를 할지 정하고, 자료조사를 한 다음에 ppt를 만들고...'},
+          {type:'p',text:'네이버에 치킨 검색중...'}],
+    },
+    
+    
+    {
+      q:['2주 뒤에 시험입니다.'],
+      a:[{type:'j',text:'시험이 2주밖에 안남았네. 이틀에 한과목씩은 끝내놔야겠다.'},
+          {type:'p',text:'시험이 2주나 남았네!'}],
+    },
+    
+    {
+      q:['내일 오전 9시 알람 맞췄어?'],
+      a:[{type:'j',text:'응 9시에 1개 맞춰놨어'},
+          {type:'p',text:'응 8시 45분, 8시 52분, 9시, 9시5분, 9시10분 맞춰놨어'}],
+    },
+    
+    {
+      q:['9시야 일어나!'],
+      a:[{type:'j',text:'일어났어.'},
+          {type:'p',text:'5분만 더...'}],
+    },
+    
+    
+    {
+      q:['오늘 저녁에 xx불닭 갈까?'],
+      a:[{type:'j',text:'거기 주차 자리 넉넉한가? 몇시까지 하지? 내가 알아볼게.'},
+          {type:'p',text:'좋아! 맛있겠다~~'}],
+    },
+    
+    
+    {
+      q:['곧 엄마 생신이셔','선물 주문해야 돼.'],
+      a:[{type:'j',text:'전에 얘기 했었던 홍삼으로 찾아보고 있어.'},
+          {type:'p',text:'홍삼살까? 아 안마기 살까? 오 이 스카프 이쁜데?'}],
+    },
+     
+    
+    {
+      q:['이번달 카드값 50만원 나왔어.'],
+      a:[{type:'j',text:'그정도 나올 줄 알았어.'},
+          {type:'p',text:'헐 왜이렇게 많이나왔지!?'}],
+    },
+    
+    {
+      q:['(사진 전송받음)'],
+      a:[{type:'j',text:'정리해서 외장하드에 넣어놔야지~'},
+          {type:'p',text:'핸드폰에 저장 끝 or 그마저도 안함'}],
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {
+      q:['갑자기 일이 생겨서','오늘 못 만날 것 같아ㅠㅠ'],
+      a:[{type:'i',text:'어쩔 수 없지 뭐ㅠㅠ (오예!!!!!)'},
+          {type:'e',text:'어쩔 수 없지 뭐ㅠㅠ (다른사람 누구 만나지?) '}],
+    },
+    
+    {
+      q:['(자주 가는 카페 사장님이 아는척을 했다)'],
+      a:[{type:'i',text:'(이제 그만 와야지)'},
+          {type:'e',text:'(더 자주 와야지)'}],
     },
     {
-      q:'갑자기 약속이 취소됐다.',
-      a:[{type:'i',text:'오예!!!!!'},
-             {type:'e',text:'새로운 약속 잡아야지'}],
+      q:['철수랑 영희가 저녁 먹자는데','너도 나올래?'],
+      a:[{type:'i',text:'아냐 나 빼고 셋이 봐~~'},
+          {type:'e',text:'콜'}],
+    },
+    
+    {
+      q:['너 이번주에 엄청 바빴다며','주말엔 뭐해?'],
+      a:[{type:'i',text:'너무 힘들었어ㅠㅠ 집에서 쉬어야지'},
+          {type:'e',text:'바빠서 못놀았어ㅠㅠ 나가 놀아야지!'}],
     },
     {
-      q:'나 시험에서 떨어졌어...ㅠㅠ',
-      a:[{type:'f',text:'많이 속상하겠다. 괜찮아?'},
-             {type:'t',text:'무슨 시험? 몇점 나왔는데??'}],
+      q:['오늘 너무 재밌었어!','조심히 들어가~'],
+      a:[{type:'i',text:'응! (아 재밌었다. 얼른 집가서 쉬어야지!)'},
+          {type:'e',text:'응! (아 재밌었다. 에너지 충전 완료!!!)'}],
     },
     {
-      q:'너랑 나랑 안 맞는 듯',
-      a:[{type:'t',text:'왜? 그렇게 생각한 이유가 뭐야?'},
-             {type:'f',text:'...그렇구나...(상처)'}],
+      q:['우리 내일 철수랑 영희도 부를까?'],
+      a:[{type:'i',text:'그냥 우리 둘이 보자~'},
+          {type:'e',text:'오 좋지좋지 불러!'}],
     },
+    
     {
-      q:'사과하면 떠오르는 것은?',
-      a:[{type:'s',text:'맛있다. 빨갛다. 동그랗다. 과일'},
-             {type:'n',text:'아이폰 로고, 백설공주, 스티븐잡스'}],
-    }, 
-    {
-      q:'복권 당첨에 대한 생각',
-      a:[{type:'s',text:'1등 되고싶다.'},
-             {type:'n',text:'복권 조작은 진짜 없을까?'}],
-    }, 
-
-    {
-      q:'생각해볼게.의 진짜 속뜻은?',
-      a:[{type:'f',text:'단호하게 거절하기 미안해서 돌려 하는 말. 거절의 뜻'},
-             {type:'t',text:'진짜 다시 한번 생각해 보겠다는 뜻'}],
+      q:['나와~~ 술 한잔 하자~'],
+      a:[{type:'i',text:'갑자기...?'},
+          {type:'e',text:'심심했는데 잘됐다 굿'}],
     },
+     
     {
-      q:'일이 마음대로 잘 안풀린다.',
-      a:[{type:'j',text:'짜증과 화가 밀려옴'},
-             {type:'p',text:'에휴, 어쩔 수 없지 뭐'}],
-    }, 
-    {
-      q:'안읽은 메시지 갯수는?',
-      a:[{type:'j',text:'0개 ~ 한자리 수'},
-             {type:'p',text:'10개 이상'}],
+      q:['나 오늘 커피 1잔 시키고','카페에 10시간 있었음ㅋㅋ'],
+      a:[{type:'i',text:'아 그랬구나... (그거 진상짓인데;;;)'},
+          {type:'e',text:'그거 진상짓인데;;;'}],
     },
+    
     {
-      q:'슬픔을 나누면?',
-      a:[{type:'t',text:'슬픈 사람이 둘이된다.'},
-             {type:'f',text:'슬픔이 반이 된다.'}],
-    }, 
-    {
-      q:'자살의 반대말은?',
-      a:[{type:'t',text:'타살'},
-             {type:'f',text:'살자'}],
+      q:['세탁소도 가야하고,','은행도 가야하고,','장도 봐야하는데...'],
+      a:[{type:'i',text:'무조건 오늘안에 다 끝낸다.'},
+          {type:'e',text:'오늘은 장만 보고, 세탁소는 내일, 은행은 모레 가지 뭐~'}],
     },
+    
+    
+    
+    
+    
+    
+    
     {
-      q:'자주 가는 카페에서 아는 척을 했다.',
-      a:[{type:'i',text:'이제 그만 와야지'},
-             {type:'e',text:'더 자주 와야지'}],
-    }, 
-    {
-      q:'평일 내내 너무 바빴다.',
-      a:[{type:'e',text:'평일 내내 못놀았으니 친구들과 나가 놀아야겠다!'},
-             {type:'i',text:'평일 내내 너무 힘들었어. 치킨 먹으면서 넷플릭스나 봐야겠다.'}],
+      q:['오늘 점심 뭐 먹을래?'],
+      a:[{type:'s',text:'음. 파스타 먹을까?'},
+          {type:'n',text:'파스타 먹을까? 아! 파스타 먹으면 느끼하니까 저녁엔 김치찌개를 먹어야겠다!'}],
     },
+    
     {
-      q:'나 차 사고 났어',
-      a:[{type:'t',text:'보험은 들었어?'},
-             {type:'f',text:'많이 안 다쳤어?'}],
+      q:['사과하면 뭐가 떠올라?'],
+      a:[{type:'s',text:'빨갛다. 맛있다. 동그랗다. 과일'},
+          {type:'n',text:'아이폰 로고ㅋㅋ 백설공주도 생각난다.'}],
     },
+    
     {
-      q:'대화 할 때 나는?',
-      a:[{type:'e',text:'내가 주도해서 대화를 이어가는 편'},
-             {type:'i',text:'주로 상대의 얘기를 들어주는 편'}],
-    }, 
-    {
-      q:'여러사람과 대화하는것을 즐긴다.',
-      a:[{type:'i',text:'아니다.'},
-             {type:'e',text:'그렇다.'}],
+      q:['일주일 내내 짜장면만 먹기 가능?'],
+      a:[{type:'s',text:'불가능 할 것 같은데 or 짜장면 좋아하니까 가능할지도?'},
+          {type:'n',text:'오 성공하면 뭐 줌???'}],
     },
+    
     {
-      q:'한달 동안 짜장면만 먹기 가능?',
-      a:[{type:'n',text:'오 성공하면 뭐 주나? 고춧가루 뿌려먹어도 되나?'},
-             {type:'s',text:'불가능 할 것 같은데...'}],
-    }, 
-    {
-      q:'시험 공부를 해야하는데 공부가 손에 안잡힌다. 그때 드는 생각은?',
-      a:[{type:'n',text:'시험 없는 세상에서 살고싶다. 시험은 왜 존재하는가?'},
-             {type:'s',text:'쉽게 외우는 방법은 없나? 수업 열심히 들을걸... 지난 시험 문제는 어떻게 나왔지?'}],
+      q:['시험 공부 하고있냐...?','아 진짜 하기싫다.'],
+      a:[{type:'s',text:'하 그러니까... 수업 열심히 들을걸... 쉽게 외우는 방법 없나;;'},
+          {type:'n',text:'시험은 대체 왜 존재하는걸까... 시험 대신 봐주는 로봇은 개발 안되나~'}],
     },
+    
     {
-      q:'밖에서 재밌게 놀았다.',
-      a:[{type:'i',text:'아 재밌었다! 이제 집가서 쉬어야지'},
-             {type:'e',text:'아 재밌었다! 에너지 충전 완료!'}],
-    },
-    {
-      q:'과제가 생겼다.',
-      a:[{type:'p',text:'일단 자료조사부터 시작한다.'},
-             {type:'j',text:'일단 뭐부터 해야 하는지 순서를 정한다.'}],
-    },
-    {
-      q:'노래 고를 때 더 중요한 것은?',
+      q:['넌 노래 들을때 뭘 중요하게 생각해?'],
       a:[{type:'s',text:'멜로디'},
-             {type:'n',text:'가사'}],
+          {type:'n',text:'가사'}],
     },
+    
     {
-      q:'2주 뒤에 시험이다.',
-      a:[{type:'j',text:'시험이 2주밖에 안남았네.'},
-             {type:'p',text:'시험이 2주나 남았네!'}],
+      q:['<순두부 찌개 레시피>','물250g을 팔팔 끓인다음','순두부를 넣고 약불로 줄인다.','양념장을 넣고 대파를 넣고...'],
+      a:[{type:'s',text:'물250g을 팔팔 끓인다음 순두부를 넣고 약불로 줄인다. 양념장을 넣고 대파를 넣고...'},
+          {type:'n',text:'오 대파말고 양파를 넣어볼까? 오징어 넣어도 맛있을듯. 넣자넣자'}],
     }, 
+    
     {
-      q:'친구가 갑자기 만나자고 한다.',
-      a:[{type:'e',text:'심심했는데 잘됐네 굿'},
-             {type:'i',text:'아 왜 갑자기...'}],
-    },
-    {
-      q:'알람을 맞출때',
-      a:[{type:'j',text:'일어날 시간 1개만 맞춘다.'},
-             {type:'p',text:'몇분 간격으로 여러개 맞춰둔다.'}],
-    } 
+      q:['30분 후면 비행기 타겠네~'],
+      a:[{type:'s',text:'응. 기내식 뭐 나오지? 5시간 걸린다던데 잠이나 좀 자야겠다.'},
+          {type:'n',text:'비행기 추락하면 어떡하지? 테러범이 타 있으면 어떡해?ㅠㅠ'}],
+    },      
   ]
 
 
@@ -183,23 +307,65 @@ const Mbti =  (()=> {
 
   
   return (
-    <div className="mainLayoutWh">
+    <div style={{width:'100vw',height:'calc(var(--vh, 1vh) * 100)',
+    fontSize:15,display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'#9db2c7'}}>
 
+   
       {page!==questionList.length?
-        <div>
-          
-          <div style={{padding:10}}>{page+1} / {questionList.length}</div>
+        <div style={{display:'flex',flexDirection:'column',backgroundColor:'#bacee0',width:'100%',maxWidth:600,height:'100%',}}>   
+
+
+          <div style={{display:'flex',flexDirection:'row',width:'100%',alignItems:'center',padding:15,
+            boxSizing:'border-box',fontWeight:700}}>
+            <div style={{display:'flex',flex:1,textAlign:'left'}}>MBTI 테스트</div>
+            <div>{page+1} / {questionList.length}</div>
+          </div>  
 
           {questionList.map((val,idx)=>
-            <div key={idx} style={{display:page===idx?'flex':'none',flexDirection:'column'}}>
-              <div>{val.q}</div>
-              <br/>
-              {val.a.map((aval,aidx)=>
-                <div key={aidx} style={{padding:10,marginBottom:10,backgroundColor:'#323232',color:'#ffffff'}}
-                onClick={()=>handleCkAnswer(idx,aval.type)}>
-                  {aval.text}
+            <div key={idx} style={{display:page===idx?'flex':'none',flexDirection:'column',height:'100%'}}>
+              <div style={{display:'flex',flexDirection:'column',flex:1}}>
+                {val.q.map((qval,qidx)=>
+                  <div key={qidx} style={{margin:'10px 15px 5px 15px',fontSize:14,display:'flex',}}>
+                    <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:5,borderRadius:15,alignItems:'center',justifyContent:'center'}}>
+                      <div style={{backgroundColor:'#cbd6f2',borderRadius:4,width:8,height:8}}/>
+                      <div style={{backgroundColor:'#cbd6f2',width:16,height:8,borderRadius:'8px 8px 0px 0px',marginTop:2}}/>
+                    </div>
+                    <div style={{display:'flex',alignItems:'center'}}>
+                      <div style={{color:'#fff',fontSize:12}}>
+                        ◀
+                      </div>
+                      <div style={{padding:'7px 10px 7px 10px',boxSizing:'border-box',backgroundColor:'#fff',borderRadius:10,
+                            maxWidth:'70vw',width:'fit-content',textAlign:'left',marginLeft:-4,}}>
+                        {qval}
+                      </div>
+                    </div>
+                   
+                  
+                  </div>
+                )}
+              </div>
+
+              <div style={{width:'100%',backgroundColor:'#fff',boxSizing:'border-box',paddingBottom:10,display:'flex',flexDirection:'column',
+                   color:'#5d5d5d'}}>
+
+                <div style={{display:'flex',width:'100%',color:'#969696',fontSize:22,borderBottom:'1px solid #eee',marginBottom:25}}>
+                  <div style={{display:'flex',flex:1,padding:10,boxSizing:'border-box'}}>+</div>
+                  <div style={{padding:10}}>#</div>
                 </div>
-              )}
+
+                {val.a.map((aval,aidx)=>
+                  <div key={aidx} style={{padding:15,margin:'0px 20px 15px 20px',height:50,display:'flex',
+                  alignItems:'center',justifyContent:'center',textAlign:'center',borderRadius:10,boxShadow:'2px 2px 0px #ededed',
+                  border:'1px solid #ededed'
+                }}
+                  onClick={()=>handleCkAnswer(idx,aval.type)}>
+                    {aval.text} ★ {aval.type}
+                  </div>
+                )}
+              </div>
+              
+             
             </div>
           )}
       
@@ -208,17 +374,183 @@ const Mbti =  (()=> {
         :
 
                 
-        <div>
-          {yourMbti}
-          <div>
-            {mbtiList.map((val,idx)=>
-              <div>
-                {val.name} / {val.count}
-              </div>
-            )}
+          
+        <div style={{display:'flex',flexDirection:'column',backgroundColor:'#fff',width:'100%',maxWidth:600,height:'100%',padding:15,boxSizing:'border-box',overflow:'hidden'}}>
+          {/* <div>
+            {yourMbti}
+          </div> */}
+          <div style={{display:'flex',flexDirection:'row',width:'100%',alignItems:'center',
+            boxSizing:'border-box',fontWeight:700}}>
+            <div style={{display:'flex',flex:1,textAlign:'left'}}>MBTI 테스트</div>
+            <div onClick={()=>window.location.reload()}>다시하기</div>
           </div>
+
+          <div style={{display:'flex',flexDirection:'column',overflow:'scroll'}}>
+              <div style={{display:'flex',width:'100%',alignItems:'center',padding:'20px 0px 15px 0px',borderBottom:'1px solid #eeeeee'}}>
+                <div style={{display:'flex',flexDirection:'column',width:50,height:50,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:20,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:4,width:8,height:8}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:16,height:8,borderRadius:'8px 8px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left',fontWeight:700,}}>
+                  {yourMbti}
+                </div>
+                <div style={{padding:'5px 10px 5px 10px',borderRadius:15,border:'1px solid #dcdcdc',fontSize:13}}>
+                  설명~~~
+                </div>
+              </div>
+
+              <div style={{fontSize:12,textAlign:'left',padding:'15px 0px 5px 0px',color:'#969696'}}>
+                즐겨찾기
+              </div>
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+
+            
+              <div style={{fontSize:12,textAlign:'left',padding:'15px 0px 5px 0px',color:'#969696',borderTop:'1px solid #eee',marginTop:10}}>
+                친구
+              </div>
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+
+              <div style={{display:'flex',width:'100%',alignItems:'center',fontSize:14,padding:'10px 0px 10px 0px',}}>
+                <div style={{display:'flex',flexDirection:'column',width:40,height:40,backgroundColor:'#a1b6e9',
+                    marginRight:10,borderRadius:16,alignItems:'center',justifyContent:'center'}}>
+                  <div style={{backgroundColor:'#cbd6f2',borderRadius:3,width:6,height:6}}/>
+                  <div style={{backgroundColor:'#cbd6f2',width:14,height:7,borderRadius:'7px 7px 0px 0px',marginTop:2}}/>
+                </div> 
+                <div style={{display:'flex',flex:1,textAlign:'left'}}>
+                  {yourMbti}
+                </div>
+                
+              </div> 
+          </div>
+         
+          
+
         </div>
-      
       }
 
     
