@@ -1,0 +1,230 @@
+.mbtiLayout{
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    background-color: #9db2c7;
+}
+
+.questionLayout{
+    display: flex;
+    flex-direction: column;
+    background-color: #bacee0;
+    width: 100%;
+    max-width: 600px;
+    height:100%;
+    overflow: hidden;
+}
+
+.mbtiTitle{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+.mbtiTitle div:nth-child(1){
+    display: flex;
+    flex:1;
+    text-align: left;
+}
+
+.questionList{
+    flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+}
+
+.questionItem{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.questionItemLayout{
+    margin: 10px 15px 5px 15px;
+    display: flex;
+}
+
+.qProfileImg{
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height:40px;
+    background-color: #a1b6e9;
+    margin-right:5px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.qProfileImg div:nth-child(1){
+    background-color: #cbd6f2;
+    border-radius: 4px;
+    width:8px;
+    height:8px;
+}
+
+.qProfileImg div:nth-child(2){
+    background-color: #cbd6f2;
+    width: 16px;
+    height: 8px;
+    border-radius: 8px 8px 0px 0px;
+    margin-top:2px;
+}
+
+.qChatbox{
+    display: flex;
+    align-items: center;
+}
+
+.qChatbox div:nth-child(1){
+    color: #fff;
+    font-size: 12px;
+}
+
+.qChatbox div:nth-child(2){
+    padding:7px 10px 7px 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 70vw;
+    width:fit-content;
+    text-align: left;
+    margin-left:-4px;
+}
+
+.answerItem{
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-bottom:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.aChatbox{
+    display: flex;
+    width: 100%;
+    color:#969696;
+    font-size: 22px;
+    border-bottom: 1px solid #eee;
+    margin-bottom:25px;
+}
+
+.aChatbox div:nth-child(1){
+    display: flex;
+    flex:1;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+.aChatbox div:nth-child(2){
+    padding:10px;
+}
+
+.answerBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0px #ededed;
+    box-sizing: border-box;
+    border:1px solid #ededed;
+    padding:15px;
+    margin:0px 20px 15px 20px;
+    height: 100px;
+}
+
+.resultLayout{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width:100%;
+    max-width: 600px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.resultContents{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    padding:15px;
+    box-sizing: border-box;
+}
+
+.myMbti{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.myProfileImg{
+    display: flex;
+    flex-direction: column;
+    width:50px;
+    height:50px;
+    border:1px solid #eee;
+    margin-right:10px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.myProfileImg img{
+    padding:5px;
+}
+
+.mbtiContents{
+    display: flex;
+    flex:1;
+    text-align: left;
+    flex-direction: column;
+}
+
+.mbtiContents div:nth-child(1){
+    font-weight: 700;
+}
+
+.mbtiContents div:nth-child(2){
+    font-size: 12px;
+    color:#969696;
+}
+
+.bookmarkTitle{
+    font-size: 12px;
+    text-align: left;
+    padding:15px 0px 5px 0px;
+    color:#969696;
+}
+
+.bookmarkItem{
+    display: flex;
+    width:100%;
+    align-items: center;
+    padding:10px 0px 10px 0px;
+}
+
+.bookmarkProfileImg{
+    display: flex;
+    flex-direction: column;
+    width:40px;
+    height:40px;
+    border:1px solid #eee;
+    margin-right:10px;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookmarkProfileImg img{
+    padding:5px;
+}
