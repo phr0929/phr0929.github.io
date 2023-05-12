@@ -47,7 +47,10 @@ useEffect(()=>{
   const [mbtiList,setMbtiList] = useState([
     {name:'I',count:0},{name:'E',count:0},{name:'S',count:0},{name:'N',count:0},{name:'F',count:0},{name:'T',count:0},{name:'P',count:0},{name:'J',count:0}
   ])
- 
+  const [imgCk,setImgCk] = useState(false)
+  const [ckImg,setCkImg] = useState(null)
+  const [ckContents,setCkContents] = useState('')
+  const [ckMbti,setCkMbti] = useState('')
   
   const questionList = [
 
@@ -202,6 +205,13 @@ useEffect(()=>{
     } 
   } 
 
+  const handleImgCk = (img,mbti,contents) => {
+    setImgCk(true)
+    setCkImg(img)
+    setCkMbti(mbti)
+    setCkContents(contents)
+  }
+
   function setMbti() {
     let ls = mbtiList   
 
@@ -221,7 +231,7 @@ useEffect(()=>{
       {mbti:'ESFP',img:ESFP,contents:'재치쟁이 자유로운 영혼의 여우',bookmark:[{mbti:'ISFJ',img:ISFJ},{mbti:'ISTJ',img:ISTJ}]},
       {mbti:'ISFP',img:ISFP,contents:'평화를 사랑하는 느긋한 코알라',bookmark:[{mbti:'ENFJ',img:ENFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ESTJ',img:ESTJ}]},
       {mbti:'ESTJ',img:ESTJ,contents:'위풍당당, 믿음직 스러운 곰',bookmark:[{mbti:'INTP',img:INTP},{mbti:'ISFP',img:ISFP},{mbti:'ISTP',img:ISTP},{mbti:'ISFJ',img:ISFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ISTJ',img:ISTJ},{mbti:'ESTJ',img:ESTJ}]},
-      {mbti:'ISTJ',img:ISTJ,contents:'우직함이 매력적인 은근한 강자',bookmark:[{mbti:'ESFP',img:ESFP},{mbti:'ISFJ',img:ISFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ISTJ',img:ISTJ},{mbti:'ESTJ',img:ESTJ}]}
+      {mbti:'ISTJ',img:ISTJ,contents:'우직함이 매력적인 은근한 강자 하마',bookmark:[{mbti:'ESFP',img:ESFP},{mbti:'ISFJ',img:ISFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ISTJ',img:ISTJ},{mbti:'ESTJ',img:ESTJ}]}
     ]
 
     let IorE = ls.find(function(data){return data.name === 'I'}).count > ls.find(function(data){return data.name === 'E'}).count?'I':'E'
@@ -236,6 +246,7 @@ useEffect(()=>{
  
     
   }
+
 
  
 
@@ -295,7 +306,7 @@ useEffect(()=>{
 
           <div className='resultContents'>
               <div className='myMbti'>
-                <div className='myProfileImg'>
+                <div className='myProfileImg' onClick={()=>handleImgCk(mbtiContents.img,mbtiContents.mbti,mbtiContents.contents)}>
                   <img src={mbtiContents.img} alt=''/> 
                 </div> 
                 <div className='mbtiContents'>
@@ -311,7 +322,7 @@ useEffect(()=>{
 
               {mbtiContents.bookmark.map((val,idx)=>
                 <div className='bookmarkItem' key={idx}>
-                  <div className='bookmarkProfileImg'>
+                  <div className='bookmarkProfileImg' onClick={()=>handleImgCk(val.img,val.mbti,'')}>
                       <img src={val.img} alt=''/> 
                   </div> 
 
@@ -321,8 +332,17 @@ useEffect(()=>{
                 </div>  
               )}
           </div>
+
+          <div onClick={()=>setImgCk(false)} style={{display:imgCk?'flex':'none',position:'absolute',width:'100vw',height:'100%',backgroundColor:'#000000dd',zIndex:1000,fontWeight:700,fontSize:16,color:'#fff',
+              alignItems:'center',justifyContent:'center',flexDirection:'column',padding:15,boxSizing:'border-box'}}>
+              <img src={ckImg} alt='' style={{width:'70%',height:'auto'}}/>
+              <div style={{fontSize:25,marginBottom:10}}>{ckMbti}</div>
+              <div>{ckContents}</div>
+          </div>
         </div>
       }
+
+    
     </div>
   );
 })
