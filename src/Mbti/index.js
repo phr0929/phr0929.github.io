@@ -60,11 +60,16 @@ useEffect(()=>{
  
   
   const questionList = [
+
+    {q:['MBTI 테스트 시작할 준비 됐어?'],
+    a:[{type:'',text:'준비됐어!'}]},
+
+
     {q:['나 요즘 너무 우울해서','여행 가려고'],
      a:[{type:'F',text:'무슨 일 있어?'},{type:'T',text:'어디로 여행가게?'}]},
     
-    // {q:['슬픔을 나누면 어떻게될까?'],
-    //  a:[{type:'F',text:'슬픔이 반이 되지'},{type:'T',text:'슬픈 사람이 둘이 되겠지'}]},
+    {q:['슬픔을 나누면 어떻게될까?'],
+     a:[{type:'F',text:'슬픔이 반이 되지'},{type:'T',text:'슬픈 사람이 둘이 되겠지'}]},
     
     // {q:['자살의 반대말은 뭘까?'],
     //  a:[{type:'F',text:'살자!'},{type:'T',text:'타살?'}]},
@@ -251,6 +256,7 @@ useEffect(()=>{
    
       {page!==questionList.length?
         <div className='questionLayout'>
+          {console.log(mbtiList)}
           <div className='mbtiTitle'>
             <div>MBTI 테스트</div>
             <div>{page+1} / {questionList.length}</div>
@@ -277,7 +283,7 @@ useEffect(()=>{
 
                 {val.a.map((aval,aidx)=>
                   <div key={aidx} className='answerBox' onClick={()=>handleCkAnswer(idx,aval.type)}>
-                    {aval.text} ★ {aval.type}
+                    {aval.text}
                   </div>
                 )}
               </div>
