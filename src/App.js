@@ -10,6 +10,7 @@ import Home from './Home'
 import Animation from './Animation'
 import Game from './Game'
 import Mbti from './Mbti'
+import MbtiResult from './Mbti/MbtiResult'
 import { ReactComponent as Testing} from './resource/avatar.svg'
  
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/Animation" element={<Animation/>}/>
               <Route path="/Game" element={<Game/>}/>
               <Route path="/Mbti" element={<Mbti/>}/>
+              <Route path="/Mbti/MbtiResult" element={<MbtiResult/>}/>
             </Routes>
         </HashRouter>
       </React.StrictMode>

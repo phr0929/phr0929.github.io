@@ -80,6 +80,7 @@
 .qChatbox{
     display: flex;
     align-items: center;
+    max-width: 60vw;
 }
 
 .qChatbox div:nth-child(1){
@@ -181,6 +182,10 @@
 
 .myProfileImg img{
     padding:5px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
 }
 
 .mbtiContents{
@@ -227,4 +232,8 @@
 
 .bookmarkProfileImg img{
     padding:5px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router';
 import '../App.css'
 import './mbti.css'
 
@@ -23,6 +24,8 @@ import ISTJ from '../resource/istj.svg'
 
 const Mbti =  (()=> {
 
+  
+const navigate = useNavigate()
 const setOneVh = () => {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -47,12 +50,7 @@ useEffect(()=>{
   const [mbtiList,setMbtiList] = useState([
     {name:'I',count:0},{name:'E',count:0},{name:'S',count:0},{name:'N',count:0},{name:'F',count:0},{name:'T',count:0},{name:'P',count:0},{name:'J',count:0}
   ])
-  const [imgCk,setImgCk] = useState(false)
-  const [ckImg,setCkImg] = useState(null)
-  const [ckContents,setCkContents] = useState('')
-  const [ckMbti,setCkMbti] = useState('')
-
-  
+ 
   const questionList = [
 
     {q:['테스트 시작할 준비 됐어?'],
@@ -210,12 +208,10 @@ useEffect(()=>{
       setMbti()
     } 
   } 
-
-  const handleImgCk = (img,mbti,contents) => {
-    setImgCk(true)
-    setCkImg(img)
-    setCkMbti(mbti)
-    setCkContents(contents)
+ 
+  const handleEdd = () => {
+    window.open('https://link.coupang.com/a/YgGg1')
+    navigate('./mbtiResult',{state:{contents:mbtiContents}})
   }
 
   function setMbti() {
@@ -224,7 +220,7 @@ useEffect(()=>{
     let mc = [
       {mbti:'ENTP',img:ENTP,contents:'화려한 언변의 앵무새',bookmark:[{mbti:'INFJ',img:INFJ},{mbti:'INTJ',img:INTJ},{mbti:'INFP',img:INFP},{mbti:'ENFP',img:ENFP},{mbti:'ENFJ',img:ENFJ},{mbti:'ENTJ',img:ENTJ},{mbti:'INTP',img:INTP}]},
       {mbti:'INTP',img:INTP,contents:'뛰어난 전략가 부엉이',bookmark:[{mbti:'ENTJ',img:ENTJ},{mbti:'ESTJ',img:ESTJ},{mbti:'INFP',img:INFP},{mbti:'ENFP',img:ENFP},{mbti:'INFJ',img:INFJ},{mbti:'ENFJ',img:ENFJ},{mbti:'INTJ',img:INTJ},{mbti:'ENTP',img:ENTP}]},
-      {mbti:'ESFJ',img:ESFJ,contents:'다정다감 분위기메이커 코끼리',bookmark:[{mbti:'ISFP',img:ISFP},{mbti:'ISTP',img:ISTP},{mbti:'ISFJ',img:ISFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ISTJ',img:ISTJ},{mbti:'ESTJ',img:ESTJ}]},
+      {mbti:'ESFJ',img:ESFJ,contents:'다정다감 분위기메이커 코끼리',bookmark:[{mbti:'ISFP',img:ISFP},{mbti:'ISTP',img:ISTP},{mbti:'ISFJ',img:ISFJ},{mbti:'ISTJ',img:ISTJ},{mbti:'ESTJ',img:ESTJ}]},
       {mbti:'ISFJ',img:ISFJ,contents:'온화하고 배려심 깊은 사슴',bookmark:[{mbti:'ESFP',img:ESFP},{mbti:'ESTP',img:ESTP},{mbti:'ESFJ',img:ESFJ},{mbti:'ISTJ',img:ISTJ},{mbti:'ESTJ',img:ESTJ}]},
       {mbti:'ESTP',img:ESTP,contents:'넘치는 에너지 얼룩말',bookmark:[{mbti:'ISFJ',img:ISFJ},{mbti:'ISTJ',img:ISTJ}]},
       {mbti:'ISTP',img:ISTP,contents:'관찰력이 뛰어난 재주꾼 고양이',bookmark:[{mbti:'ESFJ',img:ESFJ},{mbti:'ESTJ',img:ESTJ}]},
@@ -236,8 +232,8 @@ useEffect(()=>{
       {mbti:'INFP',img:INFP,contents:'수줍음 많은 예술가 토끼',bookmark:[{mbti:'ENFJ',img:ENFJ},{mbti:'ENTJ',img:ENTJ},{mbti:'ENFP',img:ENFP},{mbti:'INFJ',img:INFJ},{mbti:'INTJ',img:INTJ},{mbti:'INTP',img:INTP},{mbti:'ENTP',img:ENTP}]},
       {mbti:'ESFP',img:ESFP,contents:'재치쟁이 자유로운 영혼의 여우',bookmark:[{mbti:'ISFJ',img:ISFJ},{mbti:'ISTJ',img:ISTJ}]},
       {mbti:'ISFP',img:ISFP,contents:'평화를 사랑하는 느긋한 코알라',bookmark:[{mbti:'ENFJ',img:ENFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ESTJ',img:ESTJ}]},
-      {mbti:'ESTJ',img:ESTJ,contents:'위풍당당, 믿음직 스러운 곰',bookmark:[{mbti:'INTP',img:INTP},{mbti:'ISFP',img:ISFP},{mbti:'ISTP',img:ISTP},{mbti:'ISFJ',img:ISFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ISTJ',img:ISTJ},{mbti:'ESTJ',img:ESTJ}]},
-      {mbti:'ISTJ',img:ISTJ,contents:'우직함이 매력적인 은근한 강자 하마',bookmark:[{mbti:'ESFP',img:ESFP},{mbti:'ISFJ',img:ISFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ISTJ',img:ISTJ},{mbti:'ESTJ',img:ESTJ}]}
+      {mbti:'ESTJ',img:ESTJ,contents:'위풍당당, 믿음직 스러운 곰',bookmark:[{mbti:'INTP',img:INTP},{mbti:'ISFP',img:ISFP},{mbti:'ISTP',img:ISTP},{mbti:'ISFJ',img:ISFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ISTJ',img:ISTJ}]},
+      {mbti:'ISTJ',img:ISTJ,contents:'우직함이 매력적인 은근한 강자 하마',bookmark:[{mbti:'ESFP',img:ESFP},{mbti:'ISFJ',img:ISFJ},{mbti:'ESFJ',img:ESFJ},{mbti:'ESTJ',img:ESTJ}]}
     ]
 
     let IorE = ls.find(function(data){return data.name === 'I'}).count > ls.find(function(data){return data.name === 'E'}).count?'I':'E'
@@ -261,98 +257,91 @@ useEffect(()=>{
     <div className='mbtiLayout'>
 
    
-      {page!==questionList.length?
+      
         <div className='questionLayout'>
-          {console.log(mbtiList)}
           <div className='mbtiTitle'>
             <div>나와 닮은 동물 찾기 TEST</div>
-            <div>{page+1} / {questionList.length}</div>
+            <div>
+              {page!==questionList.length? page+1 + '/' + questionList.length
+              :
+              ''}
+            </div>
           </div>
-          {questionList.map((val,idx)=>
-            <div key={idx} className='questionList' style={{display:page===idx?'flex':'none'}}>
-              <div className='questionItem'>
-                {val.q.map((qval,qidx)=>
-                  <div key={qidx} className='questionItemLayout'>
-                    <div className='qProfileImg'>
-                      <div/> <div/>
-                    </div>
-                    <div className='qChatbox'>
-                      <div>◀</div> <div>{qval}</div>
-                    </div>
+          
+          {
+            page!==questionList.length?
+              questionList.map((val,idx)=>
+                <div key={idx} className='questionList' style={{display:page===idx?'flex':'none'}}>
+                  <div className='questionItem'>
+                    {val.q.map((qval,qidx)=>
+                      <div key={qidx} className='questionItemLayout'>
+                        <div className='qProfileImg'>
+                          <div/> <div/>
+                        </div>
+                        <div className='qChatbox'>
+                          <div>◀</div> <div>{qval}</div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
 
-              <div className='answerItem'>
-                <div className='aChatbox'>
-                  <div>+</div> <div>#</div>
+                  <div className='answerItem'>
+                    <div className='aChatbox'>
+                      <div>+</div> <div>#</div>
+                    </div>
+
+                    {val.a.map((aval,aidx)=>
+                      <div key={aidx} className='answerBox' onClick={()=>handleCkAnswer(idx,aval.type)}>
+                        {aval.text}
+                      </div>
+                    )}
+                  </div>
                 </div>
-
-                {val.a.map((aval,aidx)=>
-                  <div key={aidx} className='answerBox' onClick={()=>handleCkAnswer(idx,aval.type)}>
-                    {aval.text}
+              )
+          :
+          <div className='questionList' style={{display:'flex'}}>
+            <div className='questionItem'>
+              <div className='questionItemLayout'>
+                <div className='qProfileImg'>
+                  <div/> <div/>
+                </div>
+                <div style={{alignItems:'flex-start',display:'flex',flexDirection:'column'}}>
+                 <div style={{width:220,height:66,position:'relative',overflow:'hidden',margin:'0px 5px 10px 5px'}}>
+                    
+                      <img onClick={()=>handleEdd()} style={{position:'absolute',width:'224px',height:'70px',left:-2,top:-2,}}
+                           src="https://ads-partners.coupang.com/banners/662644?subId=&traceId=V0-301-879dd1202e5c73b2-I662644&w=320&h=100" alt=""/>
+                 
                   </div>
-                )}
+              
+
+                  <div className='qChatbox' style={{paddingTop:10}} onClick={()=>handleEdd()}>
+           
+                    <div>◀</div> <div>쿠팡 보고 결과 확인하기</div>
+                  </div>
+                  <div className='qChatbox' style={{paddingTop:10}}>
+           
+                    <div>◀</div> <div>* 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다.</div>
+                  </div>
+                </div>
+                
               </div>
             </div>
-          )}
+
+            <div className='answerItem'>
+              <div className='aChatbox'>
+                <div>+</div> <div>#</div>
+              </div>
+
+              <div className='answerBox' onClick={()=>handleEdd()}>
+                쿠팡 보고 결과 확인하러 가기
+              </div>
+            </div>
+          </div>}
       
         </div>
       
-        :
-
-                
-          
-        <div className='resultLayout'>
-     
-          <div className='mbtiTitle'>
-            <div>나와 닮은 동물 찾기 TEST</div>
-            <div onClick={()=>window.location.reload()}>다시하기</div>
-          </div>
-
          
-
-          <div className='resultContents'>
-              <div>
-                광고
-              </div>
-
-              <div className='myMbti'>
-                <div className='myProfileImg' onClick={()=>handleImgCk(mbtiContents.img,mbtiContents.mbti,mbtiContents.contents)}>
-                  <img src={mbtiContents.img} alt=''/> 
-                </div> 
-                <div className='mbtiContents'>
-                  <div>{mbtiContents.mbti}</div>
-                  <div >{mbtiContents.contents}</div>
-                </div> 
-              </div>
-
-              <div className='bookmarkTitle'>
-                즐겨찾기
-              </div>
-
-
-              {mbtiContents.bookmark.map((val,idx)=>
-                <div className='bookmarkItem' key={idx}>
-                  <div className='bookmarkProfileImg' onClick={()=>handleImgCk(val.img,val.mbti,'')}>
-                      <img src={val.img} alt=''/> 
-                  </div> 
-
-                  <div className='mbtiContents'>
-                    <div>{val.mbti}</div>
-                  </div>
-                </div>  
-              )}
-          </div>
-
-          <div onClick={()=>setImgCk(false)} style={{display:imgCk?'flex':'none',position:'absolute',width:'100vw',height:'100%',backgroundColor:'#000000dd',zIndex:1000,fontWeight:700,fontSize:16,color:'#fff',
-              alignItems:'center',justifyContent:'center',flexDirection:'column',padding:15,boxSizing:'border-box'}}>
-              <img src={ckImg} alt='' style={{width:'70%',height:'auto'}}/>
-              <div style={{fontSize:25,marginBottom:10}}>{ckMbti}</div>
-              <div>{ckContents}</div>
-          </div>
-        </div>
-      }
+ 
 
     
     </div>
