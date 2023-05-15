@@ -81,15 +81,12 @@
     overflow: scroll;
 }
 
-.questionItem{
-    display: flex;
-    flex-direction: column;
-    flex:1;
-}
+
 
 .questionItemLayout{
     margin: 10px 15px 5px 15px;
     display: flex;
+    flex:1;
 }
 
 .qProfileImg{
@@ -121,14 +118,17 @@
 
 .qChatbox{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     max-width: 60vw;
-    margin-bottom:15px;
+    margin-top:3px;
+    margin-bottom:12px;
 }
 
 .qChatbox div:nth-child(1){
     color: #fff;
     font-size: 12px;
+    margin-top:8px;
 }
 
 .qChatbox div:nth-child(2){
@@ -184,9 +184,8 @@
     margin:0px 20px 15px 20px;
     height: 100px;
 }
- 
 
-.resultListLayout{
+.chatListLayout{
     display: flex;
     flex-direction: column;
 }

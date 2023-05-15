@@ -40,14 +40,14 @@ const Mbti =  (()=> {
     {q:['우리 내일 철수랑 영희도 부를까?'],
     a:[{type:'E',text:'오 좋지좋지 불러!'},{type:'I',text:'그냥 우리 둘이 보자~'}]},
    
-    {q:['30분 후면 비행기 타겠네~'],
+    {q:['30분 후면 비행기 타겠네~30분 후면 비행기 타겠네~30분 후면 비행기 타겠네~30분 후면 비행기 타겠네~','ㅇㅇ'],
     a:[{type:'S',text:'응. 기내식 뭐 나오지? 5시간 걸린다던데 잠이나 좀 자야겠다.'},{type:'N',text:'비행기 추락하면 어떡하지? 테러범이 타 있으면 어떡해?ㅠㅠ'}]},      
 
    {q:['오늘 저녁에 할매순대국 갈까?'],
     a:[{type:'P',text:'좋아! 맛있겠다~~'},{type:'J',text:'거기 주차 자리 넉넉한가? 몇시까지 하지? 내가 알아볼게.'}]},
    
-    {q:['<순두부 찌개 레시피>','물250g을 팔팔 끓인다음','순두부를 넣고 약불로 줄인다.','양념장을 넣고 대파를 넣고...'],
-    a:[{type:'N',text:'오 대파말고 양파를 넣어볼까? 오징어 넣어도 맛있을듯. 넣자넣자'},{type:'S',text:'물250g을 팔팔 끓인다음 순두부를 넣고 약불로 줄인다. 양념장을 넣고 대파를 넣고...'}]}, 
+    {q:['<순두부 찌개 레시피>','물250g을 팔팔 끓인다음','순두부를 넣고 약불로 줄인다...'],
+    a:[{type:'N',text:'오 물은 200g만 넣어야지~ 오징어 넣어도 맛있을듯'},{type:'S',text:'물250g을 팔팔 끓인다음 순두부를 넣고...'}]}, 
    
    
    {q:['곧 엄마 생신이셔','선물 주문해야 돼.'],
@@ -237,7 +237,7 @@ const Mbti =  (()=> {
 
 
       {mbti:'ESTJ',contents:['계획을 잘 세우고 또 잘 지켜요','필요한 물건 바리바리 챙겨 다니는 스타일이에요','호불호가 명확하고 단호해요',
-    '공감 능력 없어서 위로를 잘 못해요','기억력이 좋아요','완벽주의자 기질이 있어요','약속 어기는 거 싫어해요']},
+      '공감 능력 없어서 위로를 잘 못해요','기억력이 좋아요','완벽주의자 기질이 있어요','약속 어기는 거 싫어해요']},
     
  
       {mbti:'ISTJ',contents:['모든 일을 냉정하고 객관적으로 바라봐요','원리원칙적이에요','즉흥적인 거 싫어해요','철벽을 잘 쳐요',
@@ -304,18 +304,21 @@ const Mbti =  (()=> {
             
               {questionList.map((val,idx)=>
                   <div key={idx} className='questionList' style={{display:page===idx+1?'flex':'none'}}>
-                    <div className='questionItem'>
-                      {val.q.map((qval,qidx)=>
-                        <div key={qidx} className='questionItemLayout'>
-                          <div className='qProfileImg'>
-                            <div/> <div/>
-                          </div>
-                          <div className='qChatbox'>
-                            <div>◀</div> <div>{qval}</div>
-                          </div>
+                    
+                    <div className='questionItemLayout'>
+                      <div className='qProfileImg'>
+                        <div/> <div/>
+                      </div>
+
+                      <div className='chatListLayout'>
+                        {val.q.map((qval,qidx)=>
+                        <div className='qChatbox'>
+                          <div>◀</div> <div>{qval}</div>
                         </div>
-                      )}
-                    </div>
+                        )}
+                      </div>
+
+                    </div> 
 
                     <div className='answerItem'>
                       <div className='aChatbox'>
@@ -342,35 +345,33 @@ const Mbti =  (()=> {
               
               <div className='questionList' style={{display:'flex'}}>
                   
-                  <div className='questionItem'>
-                    <div className='questionItemLayout'>
-                      <div className='qProfileImg'>
-                        <div/> <div/>
-                      </div>
+       
 
-                      <div className='resultListLayout'>
-
-                        <div style={{width:220,height:66,position:'relative',overflow:'hidden',margin:'0px 5px 10px 5px'}}>
-                        
-                            <img onClick={()=>handleEdd()} style={{position:'absolute',width:'224px',height:'70px',left:-2,top:-2,}}
-                                src="https://ads-partners.coupang.com/banners/662644?subId=&traceId=V0-301-879dd1202e5c73b2-I662644&w=320&h=100" alt=""/>
-                      
-                        </div>
-                      
-                        <div className='qChatbox' onClick={()=>handleEdd()} >
-                          <div>◀</div> <div>쿠팡 보고 결과 확인하기</div>
-                        </div>
-
-                        <div className='qChatbox'>
-            
-                          <div>◀</div> <div>* 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다.</div>
-                        </div>
-
-                      </div>
-
+                  <div className='questionItemLayout'>
+                    <div className='qProfileImg'>
+                      <div/> <div/>
+                    </div>
+                    <div className='chatListLayout'>
+                      <div style={{width:220,height:66,position:'relative',overflow:'hidden',margin:'0px 5px 10px 5px'}}>
+                          
+                          <img onClick={()=>handleEdd()} style={{position:'absolute',width:'224px',height:'70px',left:-2,top:-2,}}
+                              src="https://ads-partners.coupang.com/banners/662644?subId=&traceId=V0-301-879dd1202e5c73b2-I662644&w=320&h=100" alt=""/>
                     
-                    </div> 
-                  </div>
+                      </div>
+
+                      <div className='qChatbox' onClick={()=>handleEdd()} >
+                        <div>◀</div> <div>쿠팡 보고 결과 확인하기</div>
+                      </div>
+
+                      <div className='qChatbox'>
+          
+                        <div>◀</div> <div>* 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다.</div>
+                      </div>
+                    </div>
+                  </div> 
+
+                  
+                    
                   <div className='answerItem'>
                     <div className='aChatbox'>
                       <div>+</div> <div>#</div>

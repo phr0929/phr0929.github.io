@@ -50,7 +50,7 @@ const MbtiResult =  (()=> {
                       <div/> <div/>
                     </div>
 
-                    <div className='resultListLayout'>
+                    <div className='chatListLayout'>
                       <div className='qChatbox'>
                         <div>◀</div> <div>당신의 MBTI는 '{mbtiContents.mbti}' 입니다.</div>
                       </div>

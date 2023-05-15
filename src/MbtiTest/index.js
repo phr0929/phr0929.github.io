@@ -130,7 +130,7 @@ const MbtiTest =  (()=> {
             </div>
             {questionList.map((val,idx)=>
                 <div key={idx} className='questionList' style={{display:page===idx+1?'flex':'none'}}>
-                  <div className='questionItem'>
+                  {/* <div className='questionItem'>
                     {val.q.map((qval,qidx)=>
                       <div key={qidx} className='questionItemLayout'>
                         <div className='qProfileImg'>
@@ -141,9 +141,24 @@ const MbtiTest =  (()=> {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </div> */}
+ 
+                  <div className='questionItemLayout' style={{flex:1}}>
+                    <div className='qProfileImg'>
+                      <div/> <div/>
+                    </div>
 
-                  <div className='answerItem'>
+                    <div className='chatListLayout'>
+                      {val.q.map((qval,qidx)=>
+                      <div className='qChatbox'>
+                        <div>◀</div> <div>{qval}</div>
+                      </div>
+                      )}
+                    </div>
+
+                  </div> 
+
+                  <div className='answerItem' style={{minHeight:'fit-content'}}>
                     <div className='aChatbox'>
                       <div>+</div> <div>#</div>
                     </div>
@@ -170,7 +185,7 @@ const MbtiTest =  (()=> {
                 <div className='qProfileImg'>
                   <div/> <div/>
                 </div>
-                <div className='resultListLayout'>
+                <div className='chatListLayout'>
                   <div className='qChatbox'>
                     <div>◀</div> <div>당신의 Mbti는 '{mbtiContents.mbti}' 입니다.</div>
                   </div>
