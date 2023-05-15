@@ -17,8 +17,9 @@ const Main =  (()=> {
           <div onClick={()=>navigate('/button')}>버튼 스타일</div>
           <div onClick={()=>navigate('/button/radio')}>라디오버튼</div>
           <div onClick={()=>navigate('/animation')}>애니메이션</div>
-          <div onClick={()=>navigate('/game')}>똥피하기 게임</div>
+          <div onClick={()=>navigate('/game')}>똥피하기 게임(PC용)</div>
           <div onClick={()=>navigate('/mbti')}>MBTI 테스트</div>
+          <div onClick={()=>navigate('/mbtitest')}>MBTI 테스트(강좌용)</div>
        </div>
         
     </div>
