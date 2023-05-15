@@ -51,6 +51,7 @@ useEffect(()=>{
   const [ckImg,setCkImg] = useState(null)
   const [ckContents,setCkContents] = useState('')
   const [ckMbti,setCkMbti] = useState('')
+
   
   const questionList = [
 
@@ -309,7 +310,13 @@ useEffect(()=>{
             <div onClick={()=>window.location.reload()}>다시하기</div>
           </div>
 
+         
+
           <div className='resultContents'>
+              <div>
+                광고
+              </div>
+
               <div className='myMbti'>
                 <div className='myProfileImg' onClick={()=>handleImgCk(mbtiContents.img,mbtiContents.mbti,mbtiContents.contents)}>
                   <img src={mbtiContents.img} alt=''/> 
