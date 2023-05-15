@@ -20,7 +20,7 @@ const MbtiTest =  (()=> {
   },[])
 
   const [page,setPage] = useState(0)
-  const [mbtiContents,setMbtiContents] = useState([])
+
   const [mbtiList,setMbtiList] = useState([
     {name:'I',count:0},{name:'E',count:0},{name:'S',count:0},{name:'N',count:0},
     {name:'F',count:0},{name:'T',count:0},{name:'P',count:0},{name:'J',count:0}
@@ -78,6 +78,8 @@ const MbtiTest =  (()=> {
   } 
  
 
+  const [mbtiContents,setMbtiContents] = useState([])
+  
   function setMbti() {
     let ls = mbtiList
     let mc = [
@@ -130,24 +132,10 @@ const MbtiTest =  (()=> {
             </div>
             {questionList.map((val,idx)=>
                 <div key={idx} className='questionList' style={{display:page===idx+1?'flex':'none'}}>
-                  {/* <div className='questionItem'>
-                    {val.q.map((qval,qidx)=>
-                      <div key={qidx} className='questionItemLayout'>
-                        <div className='qProfileImg'>
-                          <div/> <div/>
-                        </div>
-                        <div className='qChatbox'>
-                          <div>◀</div> <div>{qval}</div>
-                        </div>
-                      </div>
-                    )}
-                  </div> */}
- 
                   <div className='questionItemLayout' style={{flex:1}}>
                     <div className='qProfileImg'>
                       <div/> <div/>
                     </div>
-
                     <div className='chatListLayout'>
                       {val.q.map((qval,qidx)=>
                       <div className='qChatbox'>
@@ -155,9 +143,7 @@ const MbtiTest =  (()=> {
                       </div>
                       )}
                     </div>
-
                   </div> 
-
                   <div className='answerItem' style={{minHeight:'fit-content'}}>
                     <div className='aChatbox'>
                       <div>+</div> <div>#</div>
