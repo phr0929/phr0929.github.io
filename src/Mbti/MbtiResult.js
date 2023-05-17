@@ -11,7 +11,10 @@ import './mbti.css'
 const MbtiResult =  (()=> {
 
   const location = useLocation();
-  const mbtiContents = location.state.contents
+  const mbtiContents = location?.state?.contents!==undefined?
+  location.state.contents:
+  {mbti:'',img:'',animal:'',animal2:'',contents:['']}
+
   const navigate = useNavigate()
  
   const setOneVh = () => {
@@ -22,6 +25,9 @@ const MbtiResult =  (()=> {
   setOneVh()
 
   useEffect(()=>{
+    if(location?.state?.contents===undefined){
+      navigate('../mbti')
+    }
     setOneVh();
 
     function onResize(){ 
