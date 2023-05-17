@@ -284,14 +284,11 @@ const Mbti =  (()=> {
     
   }
 
-
-
-  const url = "https://phr0929.github.io/#/mbti";
-  
+ 
   function linkCopy(){
     var textarea = document.createElement("textarea");
     document.body.appendChild(textarea);
-    textarea.value = url;
+    textarea.value = 'https://phr0929.github.io/#/mbti';
     textarea.select();
     document.execCommand("copy");
     document.body.removeChild(textarea);
@@ -301,13 +298,13 @@ const Mbti =  (()=> {
 
 // Facebook
 const shareFacebook = () => {
-  window.open("http://www.facebook.com/sharer/sharer.php?u=" + url);
+  window.open("http://www.facebook.com/sharer/sharer.php?u=" + `https://phr0929.github.io/#/mbti`);
 }
 
 // Twitter
 const shareTwitter = () => {
   const text = '나의 MBTI는?'
-  window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" +  url)
+  window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" + 'https://phr0929.github.io/#/mbti')
 }
 
 const shareKakao = () => {
@@ -318,16 +315,16 @@ const shareKakao = () => {
       description: '친구와 대화하는 느낌으로 편하게 MBTI 검사를 받아보자!',
       imageUrl: logo,
       link: {
-        webUrl : url,
-        mobileWebUrl : url,
+        webUrl : 'https://phr0929.github.io/#/mbti',
+        mobileWebUrl : 'https://phr0929.github.io/#/mbti',
       },
     },
     buttons: [
       {
         title: '웹으로 이동',
         link: {
-          webUrl : url,
-          mobileWebUrl : url,
+          webUrl : 'https://phr0929.github.io/#/mbti',
+          mobileWebUrl : 'https://phr0929.github.io/#/mbti',
         },
       },
     ]
@@ -360,11 +357,12 @@ const shareKakao = () => {
               
             </div>
             <div style={{maxHeight:130,height:130,paddingBottom:20,boxSizing:'border-box'}}>
-                <img src={icKakao} onClick={()=>shareKakao()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
-                <img src={icTwitter} onClick={()=>shareTwitter()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
-                <img src={icFacebook} onClick={()=>shareFacebook()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
+              
+                <img src={icKakao} onClick={()=>shareKakao()}  style={{width:50,height:'auto',margin:'0px 9px 0px 9px'}} alt=''/>
+                {/* <img src={icTwitter} onClick={()=>shareTwitter()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
+                <img src={icFacebook} onClick={()=>shareFacebook()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/> */}
              
-                <img src={icLink} onClick={()=>linkCopy()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
+                <img src={icLink} onClick={()=>linkCopy()}  style={{width:50,height:'auto',margin:'0px 9px 0px 9px'}} alt=''/>
             </div> 
           
 
