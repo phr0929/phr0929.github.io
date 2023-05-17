@@ -59,7 +59,7 @@ const MbtiResult =  (()=> {
             
                       <div style={{width:'auto',height:'auto',backgroundColor:'#fff',borderRadius:10,
                            margin:'5px 5px 15px 5px',}}>
-                        <img src={mbtiContents.img} alt='' style={{width:130,height:130}}/>
+                        <img src={mbtiContents.img} alt='' style={{width:130,height:130,marginTop:10}}/>
                         <div style={{padding:'0px 15px 0px 15px'}}>
                           {mbtiContents.animal}
                         </div>

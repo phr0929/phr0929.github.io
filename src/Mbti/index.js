@@ -301,6 +301,8 @@ const Mbti =  (()=> {
               <div onClick={()=>setPage(1)} className='startButton'>
                 테스트 시작하기
               </div>
+
+              
             </div>
 
           
@@ -329,7 +331,7 @@ const Mbti =  (()=> {
 
                       <div className='chatListLayout'>
                         {val.q.map((qval,qidx)=>
-                        <div className='qChatbox'>
+                        <div className='qChatbox' key={qidx}>
                           <div>◀</div> <div>{qval}</div>
                         </div>
                         )}
@@ -380,10 +382,10 @@ const Mbti =  (()=> {
                         <div>◀</div> <div>쿠팡 보고 결과 확인하기</div>
                       </div>
 
-                      <div className='qChatbox'>
-          
+                      <div className='qChatbox'>          
                         <div>◀</div> <div>* 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다.</div>
                       </div>
+                      
                     </div>
                   </div> 
 
