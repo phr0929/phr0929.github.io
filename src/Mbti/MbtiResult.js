@@ -42,7 +42,7 @@ const MbtiResult =  (()=> {
               
               <div className='mbtiTitle'>
                 <div>MBTI 테스트</div>
-                <div onClick={()=>navigate(-1)}>
+                <div onClick={()=>navigate(-1)} style={{cursor:'pointer'}}>
                     다시하기
                 </div>
                 

@@ -13,8 +13,16 @@ import Mbti from './Mbti'
 import MbtiResult from './Mbti/MbtiResult'
 // import MbtiTest from './MbtiTest'
 import { ReactComponent as Testing} from './resource/avatar.svg'
- 
+
+
 function App() {
+  
+  if (window.Kakao) {
+    const kakao = window.Kakao;
+    if (!kakao.isInitialized()) kakao.init('152cff34a176ba19c22f2f1b6260b315')
+  }
+
+
   return (
     <div className="App">
       <React.StrictMode>

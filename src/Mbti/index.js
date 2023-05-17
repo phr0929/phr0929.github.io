@@ -17,6 +17,11 @@ import ESFP from '../resource/esfp.svg'
 import ISFP from '../resource/isfp.svg'
 import ESTJ from '../resource/estj.svg'
 import ISTJ from '../resource/istj.svg'
+import logo from '../resource/myLogo.png'
+import icTwitter from '../resource/icTwitter.svg'
+import icFacebook from '../resource/icFacebook.svg'
+import icKakao from '../resource/icKakao.svg'
+import icLink from '../resource/icLink.svg'
 
 const Mbti =  (()=> {
 
@@ -280,16 +285,63 @@ const Mbti =  (()=> {
   }
 
 
- 
 
+  const url = "https://phr0929.github.io/#/mbti";
   
+  function linkCopy(){
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    textarea.value = url;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("링크가 복사되었습니다. 필요하신 곳에 붙여넣기 하세요!")
+ };
+
+
+// Facebook
+const shareFacebook = () => {
+  window.open("http://www.facebook.com/sharer/sharer.php?u=" + url);
+}
+
+// Twitter
+const shareTwitter = () => {
+  const text = '나의 MBTI는?'
+  window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" +  url)
+}
+
+const shareKakao = () => {
+  window.Kakao.Link.sendDefault({
+    objectType: 'feed',
+    content: {
+      title: '나의 MBTI는?',
+      description: '친구와 대화하는 느낌으로 편하게 MBTI 검사를 받아보자!',
+      imageUrl: logo,
+      link: {
+        webUrl : url,
+        mobileWebUrl : url,
+      },
+    },
+    buttons: [
+      {
+        title: '웹으로 이동',
+        link: {
+          webUrl : url,
+          mobileWebUrl : url,
+        },
+      },
+    ]
+  })
+}
+
+
   return (
     <div className='mbtiLayout'>
 
         {page===0?
           //시작화면
           <div className='startPageLayout'>
-            <div style={{height:50}}/>
+            <div style={{height:130,minHeight:130,maxHeight:130}}/>
 
             <div  className='startItem'>
               <div>
@@ -302,12 +354,21 @@ const Mbti =  (()=> {
                 테스트 시작하기
               </div>
 
+
+
+         
               
             </div>
-
+            <div style={{maxHeight:130,height:130,paddingBottom:20,boxSizing:'border-box'}}>
+                <img src={icKakao} onClick={()=>shareKakao()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
+                <img src={icTwitter} onClick={()=>shareTwitter()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
+                <img src={icFacebook} onClick={()=>shareFacebook()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
+             
+                <img src={icLink} onClick={()=>linkCopy()}  style={{width:55,height:'auto',maxWidth:'14vw',margin:7}} alt=''/>
+            </div> 
           
 
-            <div style={{height:50,}}>
+            <div style={{height:50,minHeight:50,maxHeight:50,}}>
               제작 : 서산개백수
             </div>
           </div>

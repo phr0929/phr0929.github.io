@@ -45,10 +45,14 @@
 }
 
 .startButton{
-    font-size: 17px;
-    margin-top:20px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px; 
+    padding:20px;
+    max-width: 240px;
+    cursor: pointer;
 }
-
+ 
 .questionLayout{
     display: flex;
     flex-direction: column;
@@ -183,6 +187,11 @@
     padding:15px;
     margin:0px 20px 15px 20px;
     height: 100px;
+    /* cursor: pointer; */
+}
+
+.answerBox:hover{
+    background-color: #fafafa;
 }
 
 .chatListLayout{
