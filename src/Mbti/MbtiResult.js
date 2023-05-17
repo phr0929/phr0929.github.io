@@ -54,9 +54,26 @@ const MbtiResult =  (()=> {
                       <div className='qChatbox'>
                         <div>◀</div> <div>당신의 MBTI는 '{mbtiContents.mbti}' 입니다.</div>
                       </div>
+                      
+                      
+            
+                      <div style={{width:'auto',height:'auto',backgroundColor:'#fff',borderRadius:10,
+                           margin:'5px 5px 15px 5px',}}>
+                        <img src={mbtiContents.img} alt='' style={{width:130,height:130}}/>
+                        <div style={{padding:'0px 15px 0px 15px'}}>
+                          {mbtiContents.animal}
+                        </div>
+                        <div style={{padding:'5px 5px 20px 5px',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                          <div style={{fontWeight:700,fontSize:18}}>{mbtiContents.animal2}</div>
+                          <div style={{marginLeft:2}}>유형</div>
+                        </div>
+                      </div>
+ 
+
                       <div className='qChatbox'>
                         <div>◀</div> <div>{mbtiContents.mbti}는요</div>
                       </div>
+
                       {mbtiContents.contents.map((val,idx)=>
                         <div className='qChatbox' key={idx}>
                           <div>◀</div> <div>{val}</div>

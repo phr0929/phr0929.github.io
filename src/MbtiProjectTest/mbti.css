@@ -1,10 +1,10 @@
 /* .mbtiLayout{
-    width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
-    font-size: 14px;
+    width:100vw;
+    font-size:14px;
     display: flex;
     justify-content: center;
-    background-color: #eeeeee;
+    background-color: #eee;
+    height: calc(var(--vh,1vh) * 100);
 }
 
 .startPageLayout{
@@ -12,27 +12,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #FFEA35;
-    width: 100%;
+    background-color: #ffea35;
+    width:100%;
     max-width: 900px;
     height:100%;
-    color: #413730;
+    color:#413730;
 }
 
-.startItem{
-    font-size: 25px;
+.startLogo{
+    font-size:25px;
     font-weight: 700;
-    height:100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.startItem div:nth-child(1){
+.startLogo div:nth-child(1){
     background-color: #413730;
     color:#ffea35;
-    width:100px;
+    width: 100px;
     height:80px;
     border-radius: 50px;
     display: flex;
@@ -40,12 +38,13 @@
     justify-content: center;
 }
 
-.startItem div:nth-child(2){
+.startLogo div:nth-child(2){
     margin-top:-15px;
 }
 
 .startButton{
-    font-size: 17px;
+    font-size:17px;
+    font-weight: 700;
     margin-top:20px;
 }
 
@@ -53,7 +52,7 @@
     display: flex;
     flex-direction: column;
     background-color: #bacee0;
-    width: 100%;
+    width:100%;
     max-width: 900px;
     height:100%;
     overflow: hidden;
@@ -62,9 +61,9 @@
 .mbtiTitle{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width:100%;
     align-items: center;
-    padding: 15px;
+    padding:15px;
     box-sizing: border-box;
     font-weight: 700;
 }
@@ -75,24 +74,30 @@
     text-align: left;
 }
 
+
 .questionList{
     flex-direction: column;
-    height: 100%;
+    height:100%;
     overflow: scroll;
 }
-
-
-
 .questionItemLayout{
-    margin: 10px 15px 5px 15px;
     display: flex;
     flex:1;
+    margin:10px 15px 5px 15px;
 }
-
-.qProfileImg{
+.answerItem{
+    width:100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-bottom:10px;
     display: flex;
     flex-direction: column;
-    width: 40px;
+}
+
+.profileImg{
+    display: flex;
+    flex-direction: column;
+    width:40px;
     height:40px;
     background-color: #a1b6e9;
     margin-right:5px;
@@ -101,73 +106,67 @@
     justify-content: center;
 }
 
-.qProfileImg div:nth-child(1){
+.profileImg div:nth-child(1){
     background-color: #cbd6f2;
     border-radius: 4px;
     width:8px;
     height:8px;
 }
 
-.qProfileImg div:nth-child(2){
+.profileImg div:nth-child(2){
     background-color: #cbd6f2;
     width: 16px;
-    height: 8px;
+    height:8px;
     border-radius: 8px 8px 0px 0px;
     margin-top:2px;
 }
 
-.qChatbox{
+.chatListLayout{
+    display: flex;
+    flex-direction: column;
+}
+
+.chatBox{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     max-width: 60vw;
-    margin-top:3px;
-    margin-bottom:12px;
+    margin:3px 0px 12px 0px;
 }
 
-.qChatbox div:nth-child(1){
-    color: #fff;
+.chatBox div:nth-child(1){
+    color:#fff;
     font-size: 12px;
     margin-top:8px;
 }
 
-.qChatbox div:nth-child(2){
+.chatBox div:nth-child(2){
     padding:7px 10px 7px 10px;
     box-sizing: border-box;
     background-color: #fff;
     border-radius: 10px;
-    max-width: 70vw;
     width:fit-content;
     text-align: left;
     margin-left:-4px;
 }
 
-.answerItem{
-    width: 100%;
-    background-color: #fff;
-    box-sizing: border-box;
-    padding-bottom:10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.aChatbox{
+.aChatBox{
     display: flex;
     width: 100%;
     color:#969696;
     font-size: 22px;
-    border-bottom: 1px solid #eee;
+    border-bottom:1px solid #eee;
     margin-bottom:25px;
 }
 
-.aChatbox div:nth-child(1){
+.aChatBox div:nth-child(1){
     display: flex;
     flex:1;
-    padding:10px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
-.aChatbox div:nth-child(2){
+.aChatBox div:nth-child(2){
     padding:10px;
 }
 
@@ -178,14 +177,9 @@
     text-align: center;
     border-radius: 10px;
     box-shadow: 2px 2px 0px #ededed;
-    box-sizing: border-box;
     border:1px solid #ededed;
-    padding:15px;
-    margin:0px 20px 15px 20px;
     height: 100px;
-}
-
-.chatListLayout{
-    display: flex;
-    flex-direction: column;
+    margin:0px 20px 15px 20px;
+    padding:10px;
+    box-sizing: border-box;
 } */
