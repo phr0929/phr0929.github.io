@@ -480,6 +480,10 @@ const shareKakao = () => {
                       <div className='qChatbox'>          
                         <div>◀</div> <div>* 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다.</div>
                       </div>
+
+                      <div className='qChatbox'>          
+                        <div>◀</div> <div>* 원치 않을 경우 뒤로가기를 눌러주세요.</div>
+                      </div>
                       
                     </div>
                   </div> 
