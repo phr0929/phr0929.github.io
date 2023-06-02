@@ -22,6 +22,7 @@ const Main =  (()=> {
           <div onClick={()=>navigate('/game')}>똥피하기 게임(PC용)</div> */}
           {/* <div onClick={()=>window.location.href='https://phr0929.github.io/mbti'}>MBTI 카톡 스타일 테스트</div> */}
           <div onClick={()=>navigate('/Mbti')}>MBTI 카톡 스타일 테스트</div>
+          <div onClick={()=>navigate('/game')}>똥피하기 게임(PC용)</div> 
        </div>
         
     </div>
