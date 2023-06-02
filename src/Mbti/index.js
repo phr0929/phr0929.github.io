@@ -228,15 +228,15 @@ const Mbti =  (()=> {
 
 
   const handleCkAnswer = (idx,vv) => { 
-    let ls = mbtiList
+    // let ls = [...mbtiList]
 
-    for(let i = 0; i < ls.length; i++) {
-      if(ls[i].name === vv){ 
-        ls[i].count = ls[i].count + 1
+    for(let i = 0; i < mbtiList.length; i++) {
+      if(mbtiList[i].name === vv){ 
+        mbtiList[i].count = mbtiList[i].count + 1
       }
     }
  
-    setMbtiList(ls)
+    setMbtiList([...mbtiList])
     setPage(page+1)
 
     if(idx+1===questionList.length){
@@ -245,8 +245,7 @@ const Mbti =  (()=> {
   } 
  
 
-  function setMbti() {
-    let ls = mbtiList
+  function setMbti() { 
     let mc = [
       {mbti:'ENTP',img:ENTP,animal:'화려한 언변의',animal2:'앵무새',contents:['말을 잘해요','다재다능하고 재주가 많아요','평범한 거 싫어해요','모범생과는 거리가 좀 멀어요',
       '본인 스스로가 잘났다고 생각해요','이상한 말을 자주 해요','혼자서도 잘 해요']},
@@ -307,10 +306,10 @@ const Mbti =  (()=> {
  
 
 
-    let IorE = ls.find(function(data){return data.name === 'I'}).count > ls.find(function(data){return data.name === 'E'}).count?'I':'E'
-    let SorN = ls.find(function(data){return data.name === 'S'}).count > ls.find(function(data){return data.name === 'N'}).count?'S':'N'
-    let ForT = ls.find(function(data){return data.name === 'F'}).count > ls.find(function(data){return data.name === 'T'}).count?'F':'T'
-    let PorJ = ls.find(function(data){return data.name === 'P'}).count > ls.find(function(data){return data.name === 'J'}).count?'P':'J'
+    let IorE = mbtiList.find(function(data){return data.name === 'I'}).count > mbtiList.find(function(data){return data.name === 'E'}).count?'I':'E'
+    let SorN = mbtiList.find(function(data){return data.name === 'S'}).count > mbtiList.find(function(data){return data.name === 'N'}).count?'S':'N'
+    let ForT = mbtiList.find(function(data){return data.name === 'F'}).count > mbtiList.find(function(data){return data.name === 'T'}).count?'F':'T'
+    let PorJ = mbtiList.find(function(data){return data.name === 'P'}).count > mbtiList.find(function(data){return data.name === 'J'}).count?'P':'J'
      
     let mbti = IorE+SorN+ForT+PorJ
 
@@ -418,7 +417,7 @@ const shareKakao = () => {
             
               {questionList.map((val,idx)=>
                   <div key={idx} className='questionList' style={{display:page===idx+1?'flex':'none'}}>
-                    
+                    {console.log(mbtiList)}
                     <div className='questionItemLayout'>
                       <div className='qProfileImg'>
                         <div/> <div/>
