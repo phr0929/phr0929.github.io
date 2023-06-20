@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import { HashRouter, Routes ,Route, Router,BrowserRouter} from 'react-router-dom'
 import './App.css'; 
 import Main from './Main';
@@ -21,6 +21,24 @@ function App() {
     const kakao = window.Kakao;
     if (!kakao.isInitialized()) kakao.init('152cff34a176ba19c22f2f1b6260b315')
   }
+
+
+  const setOneVh = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+
+  setOneVh()
+
+  useEffect(()=>{
+    setOneVh();
+
+    function onResize(){ 
+        setOneVh();
+    }
+    window.addEventListener('resize',onResize);
+  },[])
+
 
 
   return (

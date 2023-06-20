@@ -1,41 +1,14 @@
 .App {
-  text-align: center; 
-  overscroll-behavior-y: none;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw; 
+  max-width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  font-size: 14px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: #000;
+  color:#fff;
 }
  
 .mainLayout{
@@ -104,3 +77,48 @@
   box-sizing: border-box;
   border-bottom: 1px solid #dcdcdc;
 }
+
+
+.mainScrollIcon{
+  height: 26px;
+  min-height: 26px;
+  max-height: 26px;
+  width: 18px;
+  min-width: 18px;
+  max-width: 18px;
+  border:2px solid #ffffff; 
+  box-sizing: border-box;
+  border-radius: 250px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mainScrollText{
+  text-align: center;
+  margin-top:7px;
+  font-size: 11px; 
+  color: #fff; 
+}
+
+.aniScrollDown{
+  margin-top:3px;
+  width: 2px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 250px;
+  animation-name : down;
+  animation-iteration-count : infinite;
+  /* animation-direction : alternate; */
+  animation-duration : 1s;
+  animation-timing-function: linear;
+}
+@keyframes down {
+  0% {transform: translateY(0px);opacity: 1;}
+  25% {transform: translateY(1px);opacity: 1}
+  50% {transform: translateY(2px);opacity: 0.8}
+  75% {transform: translateY(3px);opacity: 0.5}
+  100% {transform: translateY(4px);opacity: 0.3} 
+  100% {transform: translateY(4px);opacity: 0} 
+}
+ 
