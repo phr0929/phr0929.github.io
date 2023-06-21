@@ -5,10 +5,27 @@
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
 </style>
-<path class="st0" d="M176.9,24.8c10.8,0,19.7,8.9,19.7,19.7v132.2c0,10.8-8.9,19.7-19.7,19.7H44.5c-10.8,0-19.7-8.9-19.7-19.7V44.5
-	c0-10.8,8.9-19.7,19.7-19.7H176.9 M176.9,4.4H44.5C22.3,4.4,4.4,22.3,4.4,44.5v132.2c0,22.1,17.9,40.1,40.1,40.1h132.2
-	c22.1,0,40.1-17.9,40.1-40.1V44.5C216.9,22.5,198.9,4.4,176.9,4.4L176.9,4.4z"/>
 <g>
-	<path class="st0" d="M74.6,157l80.5-46.5L74.6,64V157z"/>
+	<rect x="44" y="3.3" class="st0" width="133.3" height="20.4"/>
+	
+		<rect x="-53.2" y="100.5" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 124.1148 97.1852)" class="st0" width="133.3" height="20.4"/>
+	<rect x="177.3" y="23.7" class="st0" width="20.3" height="20.3"/>
+	<rect x="23.7" y="23.7" class="st0" width="20.3" height="20.3"/>
+	
+		<rect x="44" y="197.6" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 221.3 415.6704)" class="st0" width="133.3" height="20.4"/>
+	
+		<rect x="141.2" y="100.5" transform="matrix(6.123234e-17 -1 1 6.123234e-17 97.1852 318.4852)" class="st0" width="133.3" height="20.4"/>
+	
+		<rect x="177.3" y="177.3" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 374.9518 374.9518)" class="st0" width="20.3" height="20.3"/>
+	
+		<rect x="23.7" y="177.3" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 67.6482 374.9518)" class="st0" width="20.3" height="20.3"/>
+</g>
+<g>
+	<rect x="76.4" y="76.4" class="st0" width="11.4" height="68.4"/>
+	<rect x="82.1" y="82.1" class="st0" width="17.1" height="57"/>
+	<rect x="94.2" y="87.8" class="st0" width="16.4" height="45.6"/>
+	<rect x="105.1" y="93.5" class="st0" width="17" height="34.2"/>
+	<rect x="116.8" y="99.2" class="st0" width="16.7" height="22.8"/>
+	<rect x="127" y="104.9" class="st0" width="17.9" height="11.4"/>
 </g>
 </svg>
