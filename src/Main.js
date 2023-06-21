@@ -190,7 +190,7 @@ const Main =  (()=> {
               <div className='workBtnBorder3'></div>
               <div className='workBtnBorder4'></div>
               <div className='workBtnBar'>
-                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing')}>
+                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing/#/pomeranian')}>
                   ＞ <img src={imgSite} alt=''/> Go Site
                 </div>
                 <div className='workBtnAction' onClick={()=>window.open('https://youtube.com/shorts/lk4FGmQevAE?feature=share')}>
@@ -218,7 +218,7 @@ const Main =  (()=> {
               <div className='workBtnBorder3'></div>
               <div className='workBtnBorder4'></div>
               <div className='workBtnBar'>
-                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing')}>
+                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing/#/hamburger')}>
                   ＞ <img src={imgSite} alt=''/> Go Site
                 </div>
                 <div className='workBtnAction' onClick={()=>window.open('https://youtube.com/shorts/TYM40Vo58EE?feature=share')}>
@@ -243,7 +243,7 @@ const Main =  (()=> {
               <div className='workBtnBorder3'></div>
               <div className='workBtnBorder4'></div>
               <div className='workBtnBar'>
-                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing')}>
+                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing/#/cupcake')}>
                   ＞ <img src={imgSite} alt=''/> Go Site
                 </div>
                 <div className='workBtnAction' onClick={()=>window.open('https://youtube.com/shorts/rMdvvniu7Xc?feature=share')}>

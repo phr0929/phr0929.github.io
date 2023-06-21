@@ -107,6 +107,10 @@
   z-index: 570;
 }
 
+.workBtnAction{
+  display: none;
+}
+
 .workBtnBar:hover{
   background-color: #00000090; 
 }
@@ -122,9 +126,6 @@
 }
 
 
-.workBtnAction{
-  display: none;
-}
 
 .workBtnAction img{
   width: 20px;
