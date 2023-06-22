@@ -1,5 +1,5 @@
 
-import React, {Component, useEffect} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import './App.css';  
 import './main.css'
  
@@ -22,406 +22,430 @@ import imgSite from './resource/site.svg'
 import imgCodepen from './resource/codepen.svg'
 
 const Main =  (()=> {
-
   
-  const navigate = useNavigate()
-  const location = useLocation();
+  const setOneVh = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
 
+  setOneVh()
+
+  const [ctgr,setCtgr] = useState(0)
+
+  useEffect(()=>{
+    setOneVh();
+
+    function onResize(){ 
+        setOneVh();
+    }
+    window.addEventListener('resize',onResize);
+  },[])
+
+  // ctgrIdx 1=Web Page 2=CSS Drawing 3=CSS Basic 4=Etc.
+  const workList = [
+    {ctgrIdx:1,name:'카카오톡 스타일 MBTI 테스트',img:imgWork1,link1:'https://phr0929.github.io/mbti',link2:'https://youtu.be/zO7xOq8wzrM',link3:''},
+    {ctgrIdx:1,name:'To Do List',img:imgWork2,link1:'https://phr0929.github.io/todolist',link2:'',link3:''},
+    {ctgrIdx:2,name:'CSS로 강아지 그리기',img:imgWork3,link1:'https://phr0929.github.io/drawing/#/pomeranian',link2:'https://youtube.com/shorts/lk4FGmQevAE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/embed/yLQONpW?default-tab=html%2Cresult'},
+    {ctgrIdx:2,name:'CSS로 햄버거 그리기',img:imgWork4,link1:'https://phr0929.github.io/drawing/#/hamburger',link2:'https://youtube.com/shorts/TYM40Vo58EE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/wvQGPEv'},
+    {ctgrIdx:2,name:'CSS로 컵케이크 그리기',img:imgWork5,link1:'https://phr0929.github.io/drawing/#/cupcake',link2:'https://youtube.com/shorts/rMdvvniu7Xc?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/mdQEjyp'},
+  ]
  
+  const handleGoLink = (link) => {
+    window.open(link)
+  }
 
   return (
-    <div className="App">
+    <div className='homeLayout'>
       
 
-      <div style={{width:'100vw',height:'100vh',position:'fixed',alignItems:'center',flexDirection:'column'}}>
+      <div className='homeLayoutMain'>
 
-          <div style={{position:'absolute',width:'100vw',height:'100vh',top:0,left:0,zIndex:100,display:'flex',
-          flexDirection:'column',alignItems:'center',justifyContent:'center'}}> 
+          <div className='homeLayoutMainContents'> 
              
-              <div style={{width:1050,display:'flex',alignItems:'center',height:80}}>
-                <div style={{display:'flex',flex:1,alignItems:'center'}}>
-                  <img src={imgLogo} alt='' style={{width:120,height:'auto'}}></img>
+              <nav className='navLayout'>
+                <div className='navLogo'>
+                  <img src={imgLogo} alt=''></img>
                   <div className='cursor'></div>
                 </div>
-                <img src={icYoutube} style={{width:27,height:27}} alt=''></img>
-                <img src={icInsta} style={{width:27,height:27,marginLeft:20}} alt=''></img>
-                <img src={icTstory} style={{width:27,height:27,marginLeft:20}} alt=''></img>
-              </div>
-              <div style={{display:'flex',flex:1,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-                <div style={{position:'relative',height:120,marginBottom:30,display:'flex',alignItems:'center',justifyContent:'center',}}>
-                  <img src={imgProfile} alt='' style={{width:'auto',height:120,position:'absolute'}}/>
-                </div>
-                <div style={{fontSize:35,}}>
-                  서산개백수's
-                </div>
-                <div style={{fontSize:45}}>
-                  workspace
-                </div>
-                <div style={{fontSize:20,color:'#969696',marginTop:20}}>
-                  유튜브 서산개백수의 작업공간
-                </div> 
-              </div>
+                <img src={icYoutube} className='navIcon' alt=''></img>
+                <img src={icInsta} className='navIcon' alt=''></img>
+                <img src={icTstory} className='navIcon' alt=''></img>
+              </nav>
               
-            
+              <section>
+                 <img src={imgProfile} className='profileImg' alt=''/>
+                <article className='mainTitle1'>
+                  서산개백수's
+                </article>
+                <article className='mainTitle2'>
+                  workspace
+                </article>
+                <article className='mainTitle3'>
+                  유튜브 서산개백수의 작업공간
+                </article> 
+              </section> 
 
-              <div style={{position:'relative',height:80,minHeight:80,paddingTop:10,boxSizing:'border-box',display:'flex',
-                   justifyContent:'center',}}>
+              <footer>
                 <div className='wheel'></div>
-                <img src={imgMouse} alt='' style={{position:'absolute',zIndex:110,width:20,height:'auto'}}></img>
-              </div>
+                <img src={imgMouse} alt='' className='mouseImg'></img>
+              </footer>
               
           </div>
           
-          <img src={mainImg} alt='' style={{position:'absolute',width:'100vw',height:'100vh',objectFit:'cover',zIndex:10}}/>
+          <img src={mainImg} className='homeLayoutMainImg' alt=''/>
          
       </div>
 
 
-      <div style={{width:'100vw',position:'absolute',zIndex:500,display:'flex',flexDirection:'column',marginTop:'100vh',
-      backgroundColor:'#222',boxShadow:'0px 0px 50px #000'}}>
-        <div style={{fontSize:20,display:'flex',padding:'50px 0px 40px 0px',justifyContent:'center',alignItems:'center',boxSizing:'border-box'}}>
-          <div style={{display:'flex',textShadow:'2px 2px 0px #000',alignItems:'center',}}>
-            <div style={{fontSize:10,width:15,minWidth:15}}>＞</div>
-            <div style={{marginRight:15,}}>All</div>
-          </div>
-          <div style={{display:'flex',alignItems:'center',color:'#aaa'}}>
-            <div style={{fontSize:10,width:15,minWidth:15}}></div>
-            <div style={{marginRight:15}}>CSS Drawing</div>
-          </div>
-          <div style={{display:'flex',alignItems:'center',color:'#aaa'}}>
-            <div style={{fontSize:10,width:15,minWidth:15}}></div>
-            <div style={{marginRight:15}}>CSS Basic</div>
-          </div>
-          <div style={{display:'flex',alignItems:'center',color:'#aaa'}}>
-            <div style={{fontSize:10,width:15,minWidth:15}}></div>
-            <div style={{marginRight:15}}>Web Page</div>
-          </div>
-          <div style={{display:'flex',alignItems:'center',color:'#aaa'}}>
-            <div style={{fontSize:10,width:15,minWidth:15}}></div>
-            <div style={{marginRight:15}}>Etc.</div>
-          </div>
-        </div>
+      <div className='homeLayoutContents'>
+        <ul className='workCtgr'>
+          <li className={ctgr===0?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(0)}>
+            {ctgr===0?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
+            <div className='workCtgrName'>All</div> 
+          </li>
+          <li className={ctgr===1?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(1)}>
+            {ctgr===1?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
+            <div className='workCtgrName'>Web Page</div>
+          </li>
+          <li className={ctgr===2?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(2)}>
+            {ctgr===2?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
+            <div className='workCtgrName'>CSS Drawing</div>
+          </li>
+          <li className={ctgr===3?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(3)}>
+            {ctgr===3?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
+            <div className='workCtgrName'>CSS Basic</div>
+          </li>
+          <li className={ctgr===4?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(4)}>
+            {ctgr===4?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
+            <div className='workCtgrName'>Etc.</div>
+          </li>
+          <li className='workTrans'></li>
+        </ul>
+        <ul className='workListLayout'>
+          {ctgr===0?
+            workList.map((val,idx)=>
+              <li key={idx} className='workBtnLayout'>
+                <div className='workBtn' onClick={()=>handleGoLink(val.link1)}>
+                  <div className='workBtnBorder1'></div>
+                  <div className='workBtnBorder2'></div>
+                  <div className='workBtnBorder3'></div>
+                  <div className='workBtnBorder4'></div>
 
-        <div style={{display:'flex',justifyContent:'center'}}>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}}>
-            <div className='workBtn'>
+                  <img src={val.img} className='workImg' alt=''></img>
+                </div>
+
+                <div className='workTitle'>
+                  {val.name}
+                </div>
+                <div className='workGoLinkBar'>
+                  {val.link1===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link1)}>
+                    <img src={imgSite} alt=''/> Go site
+                  </div>}
+                  {val.link2===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link2)}>
+                    <img src={icYoutube} alt=''/> Youtube
+                  </div>}
+                  {val.link3===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link3)}>
+                    <img src={imgCodepen} alt=''/> Codepen
+                  </div>}
+                </div>
+              </li>
+            )
+            :
+            workList.filter((vval=>vval.ctgrIdx===ctgr)).map((val,idx)=>
+              <li key={idx} className='workBtnLayout'>
+                <div className='workBtn' onClick={()=>handleGoLink(val.link1)}>
+                  <div className='workBtnBorder1'></div>
+                  <div className='workBtnBorder2'></div>
+                  <div className='workBtnBorder3'></div>
+                  <div className='workBtnBorder4'></div>
+
+                  <img src={val.img} className='workImg' alt=''></img>
+                </div>
+
+                <div className='workTitle'>
+                  {val.name}
+                </div>
+                <div className='workGoLinkBar'>
+                  {val.link1===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link1)}>
+                    <img src={imgSite} alt=''/> Go site
+                  </div>}
+                  {val.link2===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link2)}>
+                    <img src={icYoutube} alt=''/> Youtube
+                  </div>}
+                  {val.link3===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link3)}>
+                    <img src={imgCodepen} alt=''/> Codepen
+                  </div>}
+                </div>
+              </li>)
+            }
+        </ul>
+       
+        
+        {workList.filter((vval=>vval.ctgrIdx===ctgr)).length===0?
+          <div className='worklistNull'>
+            {`if(작업리스트.length === 0){`}<br/>
+            {`　alert('작업 파일을 찾을 수 없습니다.')`}<br/>
+            {`}`} 
+            <div style={{marginTop:60,display:'flex',maxWidth:'80vw',width:400,flexDirection:'column',borderTop:'1px solid #ced3df50',borderLeft:'1px solid #ced3df50',boxShadow:'3px 3px 5px #000'}}>
+
+              <div style={{display:'flex',width:'100%',height:20,backgroundColor:'#1d2b57',color:'#ced3df',border:'1px solid #545180',paddingLeft:5,boxSizing:'border-box'}}>
+                <div style={{display:'flex',flex:1}}>웹 페이지 메시지</div>
+                <div style={{width:16,height:16,margin:'1px 2px 1px 1px',backgroundColor:'#b2abb3',color:'#8b8987',display:'flex',alignItems:'center',
+                justifyContent:'center',boxShadow:'inset 2px 2px 0px #ffffff40, inset -2px -2px 2px #00000040',textShadow:'1px 1px 1px #fff',fontWeight:700}}>×</div>
+              </div>
+              <div style={{textShadow:'0px 0px 1px #302f30',width:'100%',height:100,backgroundColor:'#b0aeae',display:'flex',flexDirection:'column',alignItems:'center',
+              justifyContent:'center',color:'#302f30'}}>
+                <div style={{display:'flex',alignItems:'center'}}>
+                  <div style={{width:35,height:30,position:'relative',display:'flex',alignItems:'center',justifyContent:'center',marginRight:25}}>
+                   
+                    <div style={{position:'absolute',marginLeft:2,marginTop:2,width:0,height:0,borderBottom:'29px solid #323232',
+                    borderLeft:'17px solid transparent',borderRight:'17px solid transparent',filter:'blur(1px)'}}>
+                    </div>
+                    <div style={{position:'absolute',width:0,height:0,borderBottom:'25px solid #d7db27',
+                    borderLeft:'15px solid transparent',borderRight:'15px solid transparent'}}>
+                    </div>
+                    <div style={{position:'absolute',width:35,height:30,display:'flex',alignItems:'center',justifyContent:'center',marginTop:6,marginLeft:3,
+                  fontSize:17,textShadow:'1px 1px 1px #00000050'}}>
+                      !
+                    </div>
+                  </div>
+                 
+                  <div>작업 파일을 찾을 수 없습니다.</div>
+                </div>
+                <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:100,height:24,textAlign:'center',boxShadow:'1px 1px 1px #302f30',border:'2px solid #302f30',marginTop:18}}>
+                  <div style={{width:94,height:18,border:'1px dashed #302f30'}}>
+                    확인
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        :<></>}
+        
+      
+        {/* <div style={{display:'flex',justifyContent:'center'}}>
+          <div className='workBtnLayout'>여기서부터
+            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/mbti')}>
               <div className='workBtnBorder1'></div>
               <div className='workBtnBorder2'></div>
               <div className='workBtnBorder3'></div>
               <div className='workBtnBorder4'></div>
-              <div className='workBtnBar'>
-                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/mbti')}>
-                  ＞ <img src={imgSite} alt=''/> Go Site
-                </div>
-                <div className='workBtnAction'  onClick={()=>window.open('https://youtu.be/zO7xOq8wzrM')}>
-                  ＞ <img src={icYoutube} alt=''/> Youtube
-                </div>
-                {/* <div className='workBtnAction'>
-                  ＞ <img src={imgCodepen} alt=''/> Codepen
-                </div> */}
-              </div>
 
               <img src={imgWork1} className='workImg' alt=''></img>
             </div>
 
-            <div style={{padding:'24px 5px 20px 5px'}}>카카오톡 스타일 MBTI 테스트</div>
-            {/* <div style={{display:'flex',justifyContent:'center',marginBottom:30}}>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                
-                Go Site
+            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/mbti')}>
+                <img src={imgSite} alt=''/> Go site
               </div>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                Youtube
+              <div className='workGoLink' onClick={()=>handleGoLink('https://youtu.be/zO7xOq8wzrM')}>
+                <img src={icYoutube} alt=''/> Youtube
               </div>
-              <div className='pixelButtonNone'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                Code
+              <div className='workGoLink'>
+                <img src={imgCodepen} alt=''/> Codepen
               </div>
-            </div> */}
+            </div>
           </div>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}} >
-            <div className='workBtn'>
+          <div className='workBtnLayout'>
+            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/todolist')}>
               <div className='workBtnBorder1'></div>
               <div className='workBtnBorder2'></div>
               <div className='workBtnBorder3'></div>
               <div className='workBtnBorder4'></div>
-              <div className='workBtnBar'>
-                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/todolist')}>
-                  ＞ <img src={imgSite} alt=''/> Go Site
-                </div>
-                {/* <div className='workBtnAction'>
-                  ＞ <img src={icYoutube} alt=''/> Youtube
-                </div>
-                <div className='workBtnAction'>
-                  ＞ <img src={imgCodepen} alt=''/> Codepen
-                </div> */}
-              </div>
+ 
 
               <img src={imgWork2} className='workImg' alt=''></img>
             </div>
  
-            <div style={{padding:'24px 5px 20px 5px'}}>To Do List</div> 
+            <div className='workTitle'>To Do List</div> 
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/todolist')}>
+                <img src={imgSite} alt=''/> Go site
+              </div>
+            </div>
             
           </div>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}} >
-            <div className='workBtn'>
+          <div className='workBtnLayout'>
+            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/pomeranian')}>
               <div className='workBtnBorder1'></div>
               <div className='workBtnBorder2'></div>
               <div className='workBtnBorder3'></div>
               <div className='workBtnBorder4'></div>
-              <div className='workBtnBar'>
-                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing/#/pomeranian')}>
-                  ＞ <img src={imgSite} alt=''/> Go Site
-                </div>
-                <div className='workBtnAction' onClick={()=>window.open('https://youtube.com/shorts/lk4FGmQevAE?feature=share')}>
-                  ＞ <img src={icYoutube} alt=''/> Youtube
-                </div>
-                <div className='workBtnAction' onClick={()=>window.open('https://codepen.io/njurvxuu-the-reactor/embed/yLQONpW?default-tab=html%2Cresult')}>
-                  ＞ <img src={imgCodepen} alt=''/> Codepen
-                </div>
-              </div>
-
               <img src={imgWork3} className='workImg' alt=''></img>
             </div>
 
           
-            <div style={{padding:'24px 5px 20px 5px'}}>CSS로 강아지 그리기</div>
-           
+            <div className='workTitle'>CSS로 강아지 그리기</div>
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/pomeranian')}>
+                <img src={imgSite} alt=''/> Go site
+              </div>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://youtube.com/shorts/lk4FGmQevAE?feature=share')}>
+                <img src={icYoutube} alt=''/> Youtube
+              </div>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://codepen.io/njurvxuu-the-reactor/embed/yLQONpW?default-tab=html%2Cresult')}>
+                <img src={imgCodepen} alt=''/> Codepen
+              </div>
+            </div>
           </div>
-          
         </div>
+
         <div style={{display:'flex',justifyContent:'center'}}>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}}  >
-            <div className='workBtn'>
+          <div className='workBtnLayout'>
+            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/hamburger')}>
               <div className='workBtnBorder1'></div>
               <div className='workBtnBorder2'></div>
               <div className='workBtnBorder3'></div>
               <div className='workBtnBorder4'></div>
-              <div className='workBtnBar'>
-                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing/#/hamburger')}>
-                  ＞ <img src={imgSite} alt=''/> Go Site
-                </div>
-                <div className='workBtnAction' onClick={()=>window.open('https://youtube.com/shorts/TYM40Vo58EE?feature=share')}>
-                  ＞ <img src={icYoutube} alt=''/> Youtube
-                </div>
-                <div className='workBtnAction' onClick={()=>window.open('https://codepen.io/njurvxuu-the-reactor/pen/wvQGPEv')}>
-                  ＞ <img src={imgCodepen} alt=''/> Codepen
-                </div>
-              </div>
 
               <img src={imgWork4} className='workImg' alt=''></img>
             </div>
             
-            <div style={{padding:'24px 5px 20px 5px'}}>CSS로 햄버거 그리기</div>
+            <div className='workTitle'>CSS로 햄버거 그리기</div>
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/hamburger')}>
+                <img src={imgSite} alt=''/> Go site
+              </div>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://youtube.com/shorts/TYM40Vo58EE?feature=share')}>
+                <img src={icYoutube} alt='' /> Youtube
+              </div>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://codepen.io/njurvxuu-the-reactor/pen/wvQGPEv')}>
+                <img src={imgCodepen} alt=''/> Codepen
+              </div>
+            </div>
          
           </div>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}}>
+          <div className='workBtnLayout'>
             
-            <div className='workBtn'>
+            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/cupcake')}>
               <div className='workBtnBorder1'></div>
               <div className='workBtnBorder2'></div>
               <div className='workBtnBorder3'></div>
               <div className='workBtnBorder4'></div>
-              <div className='workBtnBar'>
-                <div className='workBtnAction' onClick={()=>window.open('https://phr0929.github.io/drawing/#/cupcake')}>
-                  ＞ <img src={imgSite} alt=''/> Go Site
-                </div>
-                <div className='workBtnAction' onClick={()=>window.open('https://youtube.com/shorts/rMdvvniu7Xc?feature=share')}>
-                  ＞ <img src={icYoutube} alt=''/> Youtube
-                </div>
-                <div className='workBtnAction' onClick={()=>window.open('https://codepen.io/njurvxuu-the-reactor/pen/mdQEjyp')}>
-                  ＞ <img src={imgCodepen} alt=''/> Codepen
-                </div>
-              </div>
 
               <img src={imgWork5} className='workImg' alt=''></img>
             </div>
 
-            <div style={{padding:'24px 5px 20px 5px'}}>CSS로 컵케이크 그리기</div>
+            <div className='workTitle'>CSS로 컵케이크 그리기</div>
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/cupcake')}>
+                <img src={imgSite} alt=''/> Go site
+              </div>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://youtube.com/shorts/rMdvvniu7Xc?feature=share')}>
+                <img src={icYoutube} alt='' /> Youtube
+              </div>
+              <div className='workGoLink' onClick={()=>handleGoLink('https://codepen.io/njurvxuu-the-reactor/pen/mdQEjyp')}>
+                <img src={imgCodepen} alt=''/> Codepen
+              </div>
+            </div>
            
           </div>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}}>
+          <div className='workBtnLayout'>
             <div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}}>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,top:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,top:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,bottom:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,bottom:0}}></div>
-
-              {/* <img src={imgWork2} alt='' style={{ width:'100%',height:'100%',boxSizing:'border-box',}}></img> */}
             </div> 
             
-            <div style={{padding:'24px 5px 20px 5px'}}>카카오톡 스타일 MBTI 테스트</div>
-            
+            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={imgSite} alt=''/> Go site
+              </div>
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={icYoutube} alt='' /> Youtube
+              </div>
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={imgCodepen} alt=''/> Codepen
+              </div>
+            </div>
           </div>
         </div>
         <div style={{display:'flex',justifyContent:'center'}}>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}}  >
-            <div div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}} >
+          <div className='workBtnLayout'>
+            <div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}} >
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,top:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,top:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,bottom:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,bottom:0}}></div>
 
-            {/* <img src={imgWork2} alt='' style={{ width:'100%',height:'100%',boxSizing:'border-box',}}></img> */}
             </div> 
-            <div style={{padding:'24px 5px 20px 5px'}}>카카오톡 스타일 MBTI 테스트</div>
-            {/* <div style={{display:'flex',justifyContent:'center',marginBottom:30}}>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                
-                Go Site
+            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={imgSite} alt=''/> Go site
               </div>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                Youtube
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={icYoutube} alt='' /> Youtube
               </div>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                Code
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={imgCodepen} alt=''/> Codepen
               </div>
-            </div> */}
+            </div>
           </div>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}}>
+          <div className='workBtnLayout'>
             <div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}}>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,top:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,top:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,bottom:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,bottom:0}}></div>
 
-             {/* <img src={imgWork2} alt='' style={{ width:'100%',height:'100%',boxSizing:'border-box',}}></img> */}
             </div> 
-            <div style={{padding:'24px 5px 20px 5px'}}>카카오톡 스타일 MBTI 테스트</div>
-            {/* <div style={{display:'flex',justifyContent:'center',marginBottom:30}}>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                
-                Go Site
+            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={imgSite} alt=''/> Go site
               </div>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                Youtube
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={icYoutube} alt='' /> Youtube
               </div>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                Code
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={imgCodepen} alt=''/> Codepen
               </div>
-            </div> */}
+            </div>
           </div>
-          <div style={{display:'flex',flexDirection:'column',margin:10,alignItems:'center'}}>
+          <div className='workBtnLayout'>
             <div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}}>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,top:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,top:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,bottom:0}}></div>
               <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,bottom:0}}></div>
 
-              {/* <img src={imgWork2} alt='' style={{ width:'100%',height:'100%',boxSizing:'border-box',}}></img> */}
             </div> 
-            <div style={{padding:'24px 5px 20px 5px'}}>카카오톡 스타일 MBTI 테스트</div>
-            {/* <div style={{display:'flex',justifyContent:'center',marginBottom:30}}>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                
-                Go Site
+            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
+            <div className='workGoLinkBar'>
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={imgSite} alt=''/> Go site
               </div>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                Youtube
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={icYoutube} alt='' /> Youtube
               </div>
-              <div className='pixelButton'>
-                <div style={{position:'absolute',left:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',right:-4,top:-4,width:4,height:4,
-                backgroundColor:'#222'}}></div>
-                <div style={{position:'absolute',left:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',right:-4,bottom:-4,width:4,height:4,backgroundColor:'#333'}}></div>
-                <div style={{position:'absolute',left:0,bottom:-8,width:75,height:4,backgroundColor:'#333'}}></div>
-                Code
+              <div className='workGoLink' onClick={()=>handleGoLink('')}>
+                <img src={imgCodepen} alt=''/> Codepen
               </div>
-            </div> */}
-          </div>
-        </div>
+            </div>
+          </div>여기까지
+        </div> */}
+       
 
-        <div style={{width:'100vw',backgroundColor:'#000',display:'flex',alignItems:'center',
-        justifyContent:'center',padding:30,boxSizing:'border-box'}}>
-          <div style={{width:1050,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',color:'#969696'}}>
-            <div style={{display:'flex',marginBottom:20}}>
-              <img img src={icYoutube} style={{opacity:0.5,width:25,height:25,margin:'0px 10px 0px 10px'}} alt=''></img>
-              <img src={icInsta} style={{opacity:0.5,width:25,height:25,margin:'0px 10px 0px 10px'}} alt=''></img>
-              <img src={icTstory} style={{opacity:0.5,width:25,height:25,margin:'0px 10px 0px 10px'}} alt=''></img>
-            </div>
-            <div>
-              Copyright 2023. 서산개백수. All rights reserved.
-            </div>
+        <footer className='homeLayoutFooter'>
+          <div className='footerBtn'>
+            <img src={icYoutube} alt=''></img>
+            <img src={icInsta} alt=''></img>
+            <img src={icTstory} alt=''></img>
           </div>
-        </div>
+          <article>
+            Copyright 2023. 서산개백수. All rights reserved.
+          </article>
+        </footer>
       </div>
 
       
