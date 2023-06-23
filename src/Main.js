@@ -5,7 +5,7 @@ import './main.css'
  
 import { useNavigate } from 'react-router';
 import { useLocation } from 'react-router-dom';
-import mainImg from './resource/mainimg2.webp'
+import mainImg from './resource/mainimg.webp'
 import icInsta from './resource/instar_ffffff.svg'
 import icYoutube from './resource/youtube_ffffff.svg'
 import icTstory from './resource/tstory_ffffff.svg'
