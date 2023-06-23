@@ -20,6 +20,7 @@ import imgWork4 from './resource/work4.webp'
 import imgWork5 from './resource/work5.webp'
 import imgSite from './resource/site.svg'
 import imgCodepen from './resource/codepen.svg'
+import imgCareful from './resource/careful.svg'
 
 const Main =  (()=> {
   
@@ -187,22 +188,29 @@ const Main =  (()=> {
         </ul>
        
         
-        {workList.filter((vval=>vval.ctgrIdx===ctgr)).length===0?
+        {ctgr!==0 && workList.filter((vval=>vval.ctgrIdx===ctgr)).length===0?
           <div className='worklistNull'>
+            <div style={{textAlign:'left',width:400,maxWidth:'80vw'}}>
             {`if(작업리스트.length === 0){`}<br/>
             {`　alert('작업 파일을 찾을 수 없습니다.')`}<br/>
-            {`}`} 
-            <div style={{marginTop:60,display:'flex',maxWidth:'80vw',width:400,flexDirection:'column',borderTop:'1px solid #ced3df50',borderLeft:'1px solid #ced3df50',boxShadow:'3px 3px 5px #000'}}>
+            {`}`}
+            </div>
+            <div style={{marginTop:40,marginBottom:60,display:'flex',maxWidth:'80vw',width:400,flexDirection:'column', 
+            boxShadow:'1px 1px 1px #111, -1px -1px 1px #111',borderTop:'2px solid #dcdcdc',borderLeft:'2px solid #dcdcdc',
+            borderRight:'2px solid #777',borderBottom:'2px solid #777'}}>
 
-              <div style={{display:'flex',width:'100%',height:20,backgroundColor:'#1d2b57',color:'#ced3df',border:'1px solid #545180',paddingLeft:5,boxSizing:'border-box'}}>
-                <div style={{display:'flex',flex:1}}>웹 페이지 메시지</div>
-                <div style={{width:16,height:16,margin:'1px 2px 1px 1px',backgroundColor:'#b2abb3',color:'#8b8987',display:'flex',alignItems:'center',
-                justifyContent:'center',boxShadow:'inset 2px 2px 0px #ffffff40, inset -2px -2px 2px #00000040',textShadow:'1px 1px 1px #fff',fontWeight:700}}>×</div>
+              <div style={{display:'flex',width:'100%',height:23,alignItems:'center',backgroundColor:'#1d2b57',color:'#ced3df',border:'1px solid #545180',
+              boxSizing:'border-box'}}>
+                <div style={{display:'flex',flex:1,paddingLeft:5,boxSizing:'border-box'}}>웹 페이지 메시지</div>
+                <div style={{width:16,height:16,marginRight:2,backgroundColor:'#b2abb3',color:'#8b8987',display:'flex',alignItems:'center',
+                justifyContent:'center',boxShadow:'inset 1px 1px 0px #dcdcdc,inset -1px -1px 0px #777',borderTop:'1px solid #ffffff',borderLeft:'1px solid #ffffff',
+                borderRight:'1px solid #000',borderBottom:'1px solid #000',textShadow:'1px 1px 1px #fff',fontWeight:700}}>×</div>
               </div>
-              <div style={{textShadow:'0px 0px 1px #302f30',width:'100%',height:100,backgroundColor:'#b0aeae',display:'flex',flexDirection:'column',alignItems:'center',
+              <div style={{textShadow:'0px 0px 1px #302f30',width:'100%',height:100,backgroundColor:'#c1c0bf',
+              display:'flex',flexDirection:'column',alignItems:'center',
               justifyContent:'center',color:'#302f30'}}>
                 <div style={{display:'flex',alignItems:'center'}}>
-                  <div style={{width:35,height:30,position:'relative',display:'flex',alignItems:'center',justifyContent:'center',marginRight:25}}>
+                  {/* <div style={{width:35,height:30,position:'relative',display:'flex',alignItems:'center',justifyContent:'center',marginRight:25}}>
                    
                     <div style={{position:'absolute',marginLeft:2,marginTop:2,width:0,height:0,borderBottom:'29px solid #323232',
                     borderLeft:'17px solid transparent',borderRight:'17px solid transparent',filter:'blur(1px)'}}>
@@ -214,12 +222,16 @@ const Main =  (()=> {
                   fontSize:17,textShadow:'1px 1px 1px #00000050'}}>
                       !
                     </div>
-                  </div>
-                 
+
+                    
+                  </div> */}
+                  <img src={imgCareful} alt='' style={{width:32,height:32,marginRight:20}}/>
                   <div>작업 파일을 찾을 수 없습니다.</div>
                 </div>
-                <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:100,height:24,textAlign:'center',boxShadow:'1px 1px 1px #302f30',border:'2px solid #302f30',marginTop:18}}>
-                  <div style={{width:94,height:18,border:'1px dashed #302f30'}}>
+                <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:100,height:24,textAlign:'center',
+                boxShadow:'inset 1px 1px 0px #dcdcdc,inset -1px -1px 0px #777',borderTop:'1px solid #ffffff',borderLeft:'1px solid #ffffff',
+                borderRight:'1px solid #000',borderBottom:'1px solid #000',marginTop:18}}>
+                  <div style={{width:94,height:18,border:'1px dotted #302f30'}}>
                     확인
                   </div>
                 </div>
