@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2fa018a5.css",
-    "main.js": "/static/js/main.3971261c.js",
+    "main.css": "/static/css/main.26ef10f6.css",
+    "main.js": "/static/js/main.1a4ca3d3.js",
     "static/js/787.ec704a7a.chunk.js": "/static/js/787.ec704a7a.chunk.js",
     "static/media/mainimg.webp": "/static/media/mainimg.10019dcbdae2b3fc1147.webp",
     "static/media/work5.webp": "/static/media/work5.8180afc45cd7615c4103.webp",
@@ -38,15 +38,16 @@
     "static/media/codepen.svg": "/static/media/codepen.5059ee57ba0659c90b94d7069b210b80.svg",
     "static/media/icLink.svg": "/static/media/icLink.e14308a3fa8f1c061cb224b7ce442485.svg",
     "static/media/mouse_ffffff.svg": "/static/media/mouse_ffffff.a8faf9c828c3c005054cee90e23a8632.svg",
+    "static/media/careful.svg": "/static/media/careful.80b025384d60bc8b03544019d654bd34.svg",
     "static/media/icTwitter.svg": "/static/media/icTwitter.38352e2d1413af7858e09382db4f772c.svg",
     "index.html": "/index.html",
     "static/media/icFacebook.svg": "/static/media/icFacebook.056db53ccbc13fb9cdb48b7556253126.svg",
-    "main.2fa018a5.css.map": "/static/css/main.2fa018a5.css.map",
-    "main.3971261c.js.map": "/static/js/main.3971261c.js.map",
+    "main.26ef10f6.css.map": "/static/css/main.26ef10f6.css.map",
+    "main.1a4ca3d3.js.map": "/static/js/main.1a4ca3d3.js.map",
     "787.ec704a7a.chunk.js.map": "/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2fa018a5.css",
-    "static/js/main.3971261c.js"
+    "static/css/main.26ef10f6.css",
+    "static/js/main.1a4ca3d3.js"
   ]
 }
