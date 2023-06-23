@@ -13,6 +13,7 @@ ul{
     --titleFontSize:35px; 
     --gridSize:300px;
     --gridColumn:1fr 1fr 1fr;
+    --workCtgrMargin:50px;
   }
 }
 
@@ -25,6 +26,7 @@ ul{
     --titleFontSize:35px; 
     --gridSize:300px;
     --gridColumn:1fr 1fr 1fr;
+    --workCtgrMargin:50px;
   }
 }
 
@@ -37,6 +39,7 @@ ul{
     --titleFontSize:35px;
     --gridSize:300px;
     --gridColumn:1fr 1fr;
+    --workCtgrMargin:30px;
   }
 }
 
@@ -45,9 +48,10 @@ ul{
     --width:calc(100% - 30px);
     --iconSize:25px;
     --navHeight:60px;
-    --titleFontSize:28px; 
+    --titleFontSize:26px; 
     --gridSize:calc(100vw - 30px);
     --gridColumn:1fr;
+    --workCtgrMargin:15px;
   }
  
   .cursor{
@@ -62,6 +66,16 @@ ul{
     right:0px; 
     background: linear-gradient(90deg,  #00000000, #222222aa,   #222,   #222);
   }
+}
+
+@media (hover: hover) {
+  .workBtnLayout:hover{
+    transform: translateY(-5px);
+  }
+  
+  .workImg:hover{
+    filter: brightness(0.6); 
+  }  
 }
 
 .homeLayout{
@@ -225,7 +239,7 @@ ul{
 }
 
 .mainTitle3{
-  font-size: 0.6em;
+  font-size: 0.55em;
   color:#969696;
   margin-top:20px;
 }
@@ -284,7 +298,7 @@ ul{
 }
 
 .workCtgrName{
-  margin-right:15px;
+  margin-right:var(--workCtgrMargin);
 }
 
 .homeLayoutFooter{
@@ -297,6 +311,7 @@ ul{
   justify-content: center; 
   padding:30px;
   box-sizing: border-box;
+  margin-top:15px;
 }
 
 .homeLayoutFooter article{
@@ -365,7 +380,7 @@ ul{
 
 .workBtnLayout{
   width: var(--gridSize);
-  min-height: calc(var(--gridSize) + 130px);
+  min-height: calc(var(--gridSize) + 110px);
   display: flex;
   flex-direction: column;
   box-sizing: border-box; 
@@ -402,14 +417,6 @@ ul{
   z-index: 550;
 }
 
-.workBtn:hover{
-  transform: translateY(-5px);
-}
-
-.workImg:hover{
-  filter: brightness(0.6); 
-}
-
 .workGoLinkBar{
   display: flex;
   align-items: center;
@@ -432,28 +439,6 @@ ul{
   height: 16px;
   margin-right:7px;
 }
-
-
-/* .workBtnAction{
-  display: none;
-}
-
-.workBtnBar:hover{
-  background-color: #00000090; 
-}
-
-.workBtnBar:hover .workBtnAction{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 17px;
-  letter-spacing: 1px;
-  margin:7px;
-  width:120px;
-} */
-
-
- 
 
 .workBtnBorder1{
   width: 8px;

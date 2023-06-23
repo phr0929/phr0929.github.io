@@ -5,7 +5,7 @@ import './main.css'
  
 import { useNavigate } from 'react-router';
 import { useLocation } from 'react-router-dom';
-import mainImg from './resource/mainimg.webp'
+import mainImg from './resource/mainimg2.webp'
 import icInsta from './resource/instar_ffffff.svg'
 import icYoutube from './resource/youtube_ffffff.svg'
 import icTstory from './resource/tstory_ffffff.svg'
@@ -35,7 +35,7 @@ const Main =  (()=> {
 
   useEffect(()=>{
     setOneVh();
-
+    window.scrollTo(0,0)
     function onResize(){ 
         setOneVh();
     }
@@ -68,9 +68,9 @@ const Main =  (()=> {
                   <img src={imgLogo} alt=''></img>
                   <div className='cursor'></div>
                 </div>
-                <img src={icYoutube} className='navIcon' alt=''></img>
-                <img src={icInsta} className='navIcon' alt=''></img>
-                <img src={icTstory} className='navIcon' alt=''></img>
+                <img src={icYoutube} className='navIcon' alt='' onClick={()=>handleGoLink('https://youtube.com/@seosan1234')}></img>
+                <img src={icInsta} className='navIcon' alt='' onClick={()=>handleGoLink('https://www.instagram.com/seosan1234/')}></img>
+                <img src={icTstory} className='navIcon' alt='' onClick={()=>handleGoLink('https://aamm3929.tistory.com/')}></img>
               </nav>
               
               <section>
@@ -192,10 +192,10 @@ const Main =  (()=> {
           <div className='worklistNull'>
             <div style={{textAlign:'left',width:400,maxWidth:'80vw'}}>
             {`if(작업리스트.length === 0){`}<br/>
-            {`　alert('작업 파일을 찾을 수 없습니다.')`}<br/>
+            {`　alert('준비된 작업파일이 없습니다.')`}<br/>
             {`}`}
             </div>
-            <div style={{marginTop:40,marginBottom:60,display:'flex',maxWidth:'80vw',width:400,flexDirection:'column', 
+            <div style={{fontSize:14,marginTop:40,marginBottom:60,display:'flex',maxWidth:'80vw',width:400,flexDirection:'column', 
             boxShadow:'1px 1px 1px #111, -1px -1px 1px #111',borderTop:'2px solid #dcdcdc',borderLeft:'2px solid #dcdcdc',
             borderRight:'2px solid #777',borderBottom:'2px solid #777'}}>
 
@@ -210,23 +210,9 @@ const Main =  (()=> {
               display:'flex',flexDirection:'column',alignItems:'center',
               justifyContent:'center',color:'#302f30'}}>
                 <div style={{display:'flex',alignItems:'center'}}>
-                  {/* <div style={{width:35,height:30,position:'relative',display:'flex',alignItems:'center',justifyContent:'center',marginRight:25}}>
-                   
-                    <div style={{position:'absolute',marginLeft:2,marginTop:2,width:0,height:0,borderBottom:'29px solid #323232',
-                    borderLeft:'17px solid transparent',borderRight:'17px solid transparent',filter:'blur(1px)'}}>
-                    </div>
-                    <div style={{position:'absolute',width:0,height:0,borderBottom:'25px solid #d7db27',
-                    borderLeft:'15px solid transparent',borderRight:'15px solid transparent'}}>
-                    </div>
-                    <div style={{position:'absolute',width:35,height:30,display:'flex',alignItems:'center',justifyContent:'center',marginTop:6,marginLeft:3,
-                  fontSize:17,textShadow:'1px 1px 1px #00000050'}}>
-                      !
-                    </div>
-
-                    
-                  </div> */}
-                  <img src={imgCareful} alt='' style={{width:32,height:32,marginRight:20}}/>
-                  <div>작업 파일을 찾을 수 없습니다.</div>
+                 
+                  <img src={imgCareful} alt='' style={{width:32,height:32,marginRight:10}}/>
+                  <div>준비된 작업파일이 없습니다.</div>
                 </div>
                 <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:100,height:24,textAlign:'center',
                 boxShadow:'inset 1px 1px 0px #dcdcdc,inset -1px -1px 0px #777',borderTop:'1px solid #ffffff',borderLeft:'1px solid #ffffff',
@@ -241,218 +227,13 @@ const Main =  (()=> {
         :<></>}
         
       
-        {/* <div style={{display:'flex',justifyContent:'center'}}>
-          <div className='workBtnLayout'>여기서부터
-            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/mbti')}>
-              <div className='workBtnBorder1'></div>
-              <div className='workBtnBorder2'></div>
-              <div className='workBtnBorder3'></div>
-              <div className='workBtnBorder4'></div>
-
-              <img src={imgWork1} className='workImg' alt=''></img>
-            </div>
-
-            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/mbti')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://youtu.be/zO7xOq8wzrM')}>
-                <img src={icYoutube} alt=''/> Youtube
-              </div>
-              <div className='workGoLink'>
-                <img src={imgCodepen} alt=''/> Codepen
-              </div>
-            </div>
-          </div>
-          <div className='workBtnLayout'>
-            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/todolist')}>
-              <div className='workBtnBorder1'></div>
-              <div className='workBtnBorder2'></div>
-              <div className='workBtnBorder3'></div>
-              <div className='workBtnBorder4'></div>
- 
-
-              <img src={imgWork2} className='workImg' alt=''></img>
-            </div>
- 
-            <div className='workTitle'>To Do List</div> 
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/todolist')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-            </div>
-            
-          </div>
-          <div className='workBtnLayout'>
-            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/pomeranian')}>
-              <div className='workBtnBorder1'></div>
-              <div className='workBtnBorder2'></div>
-              <div className='workBtnBorder3'></div>
-              <div className='workBtnBorder4'></div>
-              <img src={imgWork3} className='workImg' alt=''></img>
-            </div>
-
-          
-            <div className='workTitle'>CSS로 강아지 그리기</div>
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/pomeranian')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://youtube.com/shorts/lk4FGmQevAE?feature=share')}>
-                <img src={icYoutube} alt=''/> Youtube
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://codepen.io/njurvxuu-the-reactor/embed/yLQONpW?default-tab=html%2Cresult')}>
-                <img src={imgCodepen} alt=''/> Codepen
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style={{display:'flex',justifyContent:'center'}}>
-          <div className='workBtnLayout'>
-            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/hamburger')}>
-              <div className='workBtnBorder1'></div>
-              <div className='workBtnBorder2'></div>
-              <div className='workBtnBorder3'></div>
-              <div className='workBtnBorder4'></div>
-
-              <img src={imgWork4} className='workImg' alt=''></img>
-            </div>
-            
-            <div className='workTitle'>CSS로 햄버거 그리기</div>
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/hamburger')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://youtube.com/shorts/TYM40Vo58EE?feature=share')}>
-                <img src={icYoutube} alt='' /> Youtube
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://codepen.io/njurvxuu-the-reactor/pen/wvQGPEv')}>
-                <img src={imgCodepen} alt=''/> Codepen
-              </div>
-            </div>
-         
-          </div>
-          <div className='workBtnLayout'>
-            
-            <div className='workBtn' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/cupcake')}>
-              <div className='workBtnBorder1'></div>
-              <div className='workBtnBorder2'></div>
-              <div className='workBtnBorder3'></div>
-              <div className='workBtnBorder4'></div>
-
-              <img src={imgWork5} className='workImg' alt=''></img>
-            </div>
-
-            <div className='workTitle'>CSS로 컵케이크 그리기</div>
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://phr0929.github.io/drawing/#/cupcake')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://youtube.com/shorts/rMdvvniu7Xc?feature=share')}>
-                <img src={icYoutube} alt='' /> Youtube
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('https://codepen.io/njurvxuu-the-reactor/pen/mdQEjyp')}>
-                <img src={imgCodepen} alt=''/> Codepen
-              </div>
-            </div>
-           
-          </div>
-          <div className='workBtnLayout'>
-            <div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}}>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,top:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,top:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,bottom:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,bottom:0}}></div>
-            </div> 
-            
-            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={icYoutube} alt='' /> Youtube
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={imgCodepen} alt=''/> Codepen
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{display:'flex',justifyContent:'center'}}>
-          <div className='workBtnLayout'>
-            <div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}} >
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,top:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,top:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,bottom:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,bottom:0}}></div>
-
-            </div> 
-            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={icYoutube} alt='' /> Youtube
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={imgCodepen} alt=''/> Codepen
-              </div>
-            </div>
-          </div>
-          <div className='workBtnLayout'>
-            <div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}}>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,top:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,top:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,bottom:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,bottom:0}}></div>
-
-            </div> 
-            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={icYoutube} alt='' /> Youtube
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={imgCodepen} alt=''/> Codepen
-              </div>
-            </div>
-          </div>
-          <div className='workBtnLayout'>
-            <div style={{width:300,height:300,position:'relative',backgroundColor:'#969696'}}>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,top:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,top:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',left:0,bottom:0}}></div>
-              <div style={{width:7,height:7,backgroundColor:'#222',position:'absolute',right:0,bottom:0}}></div>
-
-            </div> 
-            <div className='workTitle'>카카오톡 스타일 MBTI 테스트</div>
-            <div className='workGoLinkBar'>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={imgSite} alt=''/> Go site
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={icYoutube} alt='' /> Youtube
-              </div>
-              <div className='workGoLink' onClick={()=>handleGoLink('')}>
-                <img src={imgCodepen} alt=''/> Codepen
-              </div>
-            </div>
-          </div>여기까지
-        </div> */}
-       
+      
 
         <footer className='homeLayoutFooter'>
           <div className='footerBtn'>
-            <img src={icYoutube} alt=''></img>
-            <img src={icInsta} alt=''></img>
-            <img src={icTstory} alt=''></img>
+            <img src={icYoutube} alt='' onClick={()=>handleGoLink('https://youtube.com/@seosan1234')}></img>
+            <img src={icInsta} alt='' onClick={()=>handleGoLink('https://www.instagram.com/seosan1234/')}></img>
+            <img src={icTstory} alt='' onClick={()=>handleGoLink('https://aamm3929.tistory.com/')}></img>
           </div>
           <article>
             Copyright 2023. 서산개백수. All rights reserved.
