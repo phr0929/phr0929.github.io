@@ -4,20 +4,7 @@ ul{
   margin: 0px;
 }
 
-@media only screen and (min-width: 1201px){
-  /* bigpc */
-  :root{
-    --width:1000px;
-    --iconSize:27px;
-    --navHeight:80px;
-    --titleFontSize:35px; 
-    --gridSize:300px;
-    --gridColumn:1fr 1fr 1fr;
-    --workCtgrMargin:50px;
-  }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+@media only screen and (min-width: 1024px){
   /* pc */
   :root{
     --width:1000px;
@@ -28,6 +15,13 @@ ul{
     --gridColumn:1fr 1fr 1fr;
     --workCtgrMargin:50px;
   }
+  .workBtnLayout:hover{
+    transform: translateY(-5px);
+  }
+
+  .workImg:hover{
+    filter: brightness(0.6); 
+  }  
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -68,15 +62,7 @@ ul{
   }
 }
 
-@media (hover: hover) {
-  .workBtnLayout:hover{
-    transform: translateY(-5px);
-  }
-  
-  .workImg:hover{
-    filter: brightness(0.6); 
-  }  
-}
+
 
 .homeLayout{
   width: 100vw;
@@ -388,17 +374,6 @@ ul{
   justify-content: flex-start;
 }
 
-.worklistNull{
-  width: 100%;
-  letter-spacing: 1.5px;
-  line-height: 1.5; 
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box; 
-  align-items: center;
-  justify-content: center;
-}
-
 .workBtn{
   width: var(--gridSize);
   height: var(--gridSize);
@@ -478,4 +453,122 @@ ul{
   z-index: 600;
   right: -1px;
   bottom: -1px;
+}
+
+.worklistNull{
+  width: 100%;
+  min-height: calc(var(--gridSize) + 110px);
+  letter-spacing: 1.5px;
+  line-height: 1.5; 
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; 
+  align-items: center;
+  justify-content: center;
+}
+
+.worklistNullTitle{
+  text-align: left;
+  width: 400px;
+  max-width: 80vw;
+}
+
+.workNullBox{
+  font-size: 14px;
+  margin:40px 0px 60px 0px;
+  display: flex;
+  width: 400px;
+  max-width: 80vw;
+  flex-direction: column;
+  box-shadow:
+    1px 1px 1px #111,
+    -1px -1px 1px #111;
+  border-top:2px solid #dcdcdc;
+  border-left:2px solid #dcdcdc;
+  border-right:2px solid #777;
+  border-bottom:2px solid #777;
+}
+
+.workNullTaskbar{
+  display: flex;
+  width: 100%;
+  height: 23px;
+  align-items: center;
+  background-color: #1d2b57;
+  color:#ced3df;
+  border:1px solid #545180;
+  box-sizing: border-box;
+}
+
+.workNullTaskbarTitle{
+  display: flex;
+  flex:1;
+  padding-left:5px;
+  box-sizing: border-box;
+}
+
+.workNullTaskbarXbox{
+  width: 16px;
+  height: 16px;
+  margin-right:2px;
+  background-color: #b2abb3;
+  color:#8b8987;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    inset 1px 1px 0px #dcdcdc,
+    inset -1px -1px 0px #777;
+  border-top:1px solid #fff;
+  border-left:1px solid #fff;
+  border-right:1px solid #000;
+  border-bottom: 1px solid #000;
+  text-shadow: 1px 1px 1px #fff;
+  font-weight: 700;
+}
+
+.workNullContents{
+  text-shadow: 0px 0px 1px #302f30;
+  width: 100%;
+  height: 100px;
+  background-color: #c1c0bf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #302f30;
+}
+
+.workNullContents >div:nth-child(1){
+  display: flex;
+  align-items: center;
+}
+
+.workNullContents >div:nth-child(1) img{
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.workNullContents >div:nth-child(2){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 24px;
+  text-align: center;
+  box-shadow: 
+    inset 1px 1px 0px #dcdcdc,
+    inset -1px -1px 0px #777;
+  border-top:1px solid #fff;
+  border-left:1px solid #fff;
+  border-right:1px solid #000;
+  border-bottom:1px solid #000;
+  margin-top:18px;
+}
+
+.workNullContents >div:nth-child(2) >div{
+  width:94px;
+  height: 18px;
+  border:1px dotted #302f30;
 }

@@ -189,41 +189,31 @@ const Main =  (()=> {
        
         
         {ctgr!==0 && workList.filter((vval=>vval.ctgrIdx===ctgr)).length===0?
-          <div className='worklistNull'>
-            <div style={{textAlign:'left',width:400,maxWidth:'80vw'}}>
-            {`if(작업리스트.length === 0){`}<br/>
-            {`　alert('준비된 작업파일이 없습니다.')`}<br/>
-            {`}`}
+          <section className='worklistNull'>
+            <div className='worklistNullTitle'>
+              {`if(작업리스트.length === 0){`}<br/>
+              {`　alert('준비된 작업파일이 없습니다.')`}<br/>
+              {`}`}
             </div>
-            <div style={{fontSize:14,marginTop:40,marginBottom:60,display:'flex',maxWidth:'80vw',width:400,flexDirection:'column', 
-            boxShadow:'1px 1px 1px #111, -1px -1px 1px #111',borderTop:'2px solid #dcdcdc',borderLeft:'2px solid #dcdcdc',
-            borderRight:'2px solid #777',borderBottom:'2px solid #777'}}>
+            <div className='workNullBox'>
 
-              <div style={{display:'flex',width:'100%',height:23,alignItems:'center',backgroundColor:'#1d2b57',color:'#ced3df',border:'1px solid #545180',
-              boxSizing:'border-box'}}>
-                <div style={{display:'flex',flex:1,paddingLeft:5,boxSizing:'border-box'}}>웹 페이지 메시지</div>
-                <div style={{width:16,height:16,marginRight:2,backgroundColor:'#b2abb3',color:'#8b8987',display:'flex',alignItems:'center',
-                justifyContent:'center',boxShadow:'inset 1px 1px 0px #dcdcdc,inset -1px -1px 0px #777',borderTop:'1px solid #ffffff',borderLeft:'1px solid #ffffff',
-                borderRight:'1px solid #000',borderBottom:'1px solid #000',textShadow:'1px 1px 1px #fff',fontWeight:700}}>×</div>
+              <div className='workNullTaskbar'>
+                <div className='workNullTaskbarTitle'>웹 페이지 메시지</div>
+                <div className='workNullTaskbarXbox'>×</div>
               </div>
-              <div style={{textShadow:'0px 0px 1px #302f30',width:'100%',height:100,backgroundColor:'#c1c0bf',
-              display:'flex',flexDirection:'column',alignItems:'center',
-              justifyContent:'center',color:'#302f30'}}>
-                <div style={{display:'flex',alignItems:'center'}}>
-                 
-                  <img src={imgCareful} alt='' style={{width:32,height:32,marginRight:10}}/>
+              <div className='workNullContents'>
+                <div>
+                  <img src={imgCareful} alt=''/>
                   <div>준비된 작업파일이 없습니다.</div>
                 </div>
-                <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:100,height:24,textAlign:'center',
-                boxShadow:'inset 1px 1px 0px #dcdcdc,inset -1px -1px 0px #777',borderTop:'1px solid #ffffff',borderLeft:'1px solid #ffffff',
-                borderRight:'1px solid #000',borderBottom:'1px solid #000',marginTop:18}}>
-                  <div style={{width:94,height:18,border:'1px dotted #302f30'}}>
+                <div>
+                  <div>
                     확인
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         :<></>}
         
       
