@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.347d662f.css",
-    "main.js": "/static/js/main.8c1d07e0.js",
+    "main.js": "/static/js/main.80b1bfe6.js",
     "static/js/787.ec704a7a.chunk.js": "/static/js/787.ec704a7a.chunk.js",
     "static/media/mainimg.webp": "/static/media/mainimg.10019dcbdae2b3fc1147.webp",
     "static/media/work5.webp": "/static/media/work5.9680d853d2d7e36aaebc.webp",
     "static/media/work4.webp": "/static/media/work4.2a127e872c5ee5af9203.webp",
     "static/media/work1.webp": "/static/media/work1.a11143d67adbb8e65947.webp",
-    "static/media/work6.webp": "/static/media/work6.8cf79b458862d9b1a42f.webp",
+    "static/media/work6.webp": "/static/media/work6.399a7a04032aaeda2c7c.webp",
     "static/media/work3.webp": "/static/media/work3.4aba920e5d81faba027e.webp",
     "static/media/work2.webp": "/static/media/work2.76609f45b089978a014e.webp",
     "static/media/myLogo.png": "/static/media/myLogo.1a58deaf36a19de96920.png",
@@ -44,11 +44,11 @@
     "index.html": "/index.html",
     "static/media/icFacebook.svg": "/static/media/icFacebook.056db53ccbc13fb9cdb48b7556253126.svg",
     "main.347d662f.css.map": "/static/css/main.347d662f.css.map",
-    "main.8c1d07e0.js.map": "/static/js/main.8c1d07e0.js.map",
+    "main.80b1bfe6.js.map": "/static/js/main.80b1bfe6.js.map",
     "787.ec704a7a.chunk.js.map": "/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.347d662f.css",
-    "static/js/main.8c1d07e0.js"
+    "static/js/main.80b1bfe6.js"
   ]
 }
