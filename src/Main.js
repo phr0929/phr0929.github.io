@@ -2,9 +2,6 @@
 import React, {Component, useEffect, useState} from 'react';
 import './App.css';  
 import './main.css'
- 
-import { useNavigate } from 'react-router';
-import { useLocation } from 'react-router-dom';
 import mainImg from './resource/mainimg.webp'
 import icInsta from './resource/instar_ffffff.svg'
 import icYoutube from './resource/youtube_ffffff.svg'
@@ -18,6 +15,7 @@ import imgWork2 from './resource/work2.webp'
 import imgWork3 from './resource/work3.webp'
 import imgWork4 from './resource/work4.webp'
 import imgWork5 from './resource/work5.webp'
+import imgWork6 from './resource/work6.webp'
 import imgSite from './resource/site.svg'
 import imgCodepen from './resource/codepen.svg'
 import imgCareful from './resource/careful.svg'
@@ -44,17 +42,36 @@ const Main =  (()=> {
 
   // ctgrIdx 1=Web Page 2=CSS Drawing 3=CSS Basic 4=Etc.
   const workList = [
-    {ctgrIdx:1,name:'카카오톡 스타일 MBTI 테스트',img:imgWork1,link1:'https://phr0929.github.io/mbti',link2:'https://youtu.be/zO7xOq8wzrM',link3:''},
-    {ctgrIdx:1,name:'To Do List',img:imgWork2,link1:'https://phr0929.github.io/todolist',link2:'',link3:''},
-    {ctgrIdx:2,name:'CSS로 강아지 그리기',img:imgWork3,link1:'https://phr0929.github.io/drawing/#/pomeranian',link2:'https://youtube.com/shorts/lk4FGmQevAE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/embed/yLQONpW?default-tab=html%2Cresult'},
-    {ctgrIdx:2,name:'CSS로 햄버거 그리기',img:imgWork4,link1:'https://phr0929.github.io/drawing/#/hamburger',link2:'https://youtube.com/shorts/TYM40Vo58EE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/wvQGPEv'},
-    {ctgrIdx:2,name:'CSS로 컵케이크 그리기',img:imgWork5,link1:'https://phr0929.github.io/drawing/#/cupcake',link2:'https://youtube.com/shorts/rMdvvniu7Xc?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/mdQEjyp'},
+    {ct:[1,2],name:'CSS로 짱구 그리기 / 옷입히기 만들기',img:imgWork6,link1:'https://phr0929.github.io/drawing/#/zzanggu',link2:'',link3:'https://codepen.io/njurvxuu-the-reactor/pen/zYMNydB'},
+    {ct:[1],name:'카카오톡 스타일 MBTI 테스트',img:imgWork1,link1:'https://phr0929.github.io/mbti',link2:'https://youtu.be/zO7xOq8wzrM',link3:''},
+    {ct:[1],name:'To Do List',img:imgWork2,link1:'https://phr0929.github.io/todolist',link2:'',link3:''},
+    {ct:[2],name:'CSS로 강아지 그리기',img:imgWork3,link1:'https://phr0929.github.io/drawing/#/pomeranian',link2:'https://youtube.com/shorts/lk4FGmQevAE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/embed/yLQONpW?default-tab=html%2Cresult'},
+    {ct:[2],name:'CSS로 햄버거 그리기',img:imgWork4,link1:'https://phr0929.github.io/drawing/#/hamburger',link2:'https://youtube.com/shorts/TYM40Vo58EE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/wvQGPEv'},
+    {ct:[2],name:'CSS로 컵케이크 그리기',img:imgWork5,link1:'https://phr0929.github.io/drawing/#/cupcake',link2:'https://youtube.com/shorts/rMdvvniu7Xc?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/mdQEjyp'},
   ]
+ 
  
   const handleGoLink = (link) => {
     window.open(link)
   }
+ 
 
+  const handleSetCtgr = (idx) => {
+    setCtgr(idx) 
+  }
+
+  function ctgrLenght(){
+    
+    let count = 0
+
+    for(let i = 0; 5 > i; i++){
+      if(workList[i].ct.filter((val)=>val === ctgr).length>0){
+        count = count + 1
+      }
+    }
+
+    return ctgr!==0 && count === 0?'ㅇㅇ':'ㄴㄴ'
+  }
   return (
     <div className='homeLayout'>
       
@@ -100,31 +117,61 @@ const Main =  (()=> {
 
       <div className='homeLayoutContents'>
         <ul className='workCtgr'>
-          <li className={ctgr===0?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(0)}>
+          <li className={ctgr===0?'workCtgrOn':'workCtgrOff'} onClick={()=>handleSetCtgr(0)}>
             {ctgr===0?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
             <div className='workCtgrName'>All</div> 
           </li>
-          <li className={ctgr===1?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(1)}>
+          <li className={ctgr===1?'workCtgrOn':'workCtgrOff'} onClick={()=>handleSetCtgr(1)}>
             {ctgr===1?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
             <div className='workCtgrName'>Web Page</div>
           </li>
-          <li className={ctgr===2?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(2)}>
+          <li className={ctgr===2?'workCtgrOn':'workCtgrOff'} onClick={()=>handleSetCtgr(2)}>
             {ctgr===2?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
             <div className='workCtgrName'>CSS Drawing</div>
           </li>
-          <li className={ctgr===3?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(3)}>
+          <li className={ctgr===3?'workCtgrOn':'workCtgrOff'} onClick={()=>handleSetCtgr(3)}>
             {ctgr===3?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
             <div className='workCtgrName'>CSS Basic</div>
           </li>
-          <li className={ctgr===4?'workCtgrOn':'workCtgrOff'} onClick={()=>setCtgr(4)}>
+          <li className={ctgr===4?'workCtgrOn':'workCtgrOff'} onClick={()=>handleSetCtgr(4)}>
             {ctgr===4?<div className='workCtgrArrow'>＞</div>:<div className='workCtgrArrow'></div>}
             <div className='workCtgrName'>Etc.</div>
           </li>
           <li className='workTrans'></li>
         </ul>
         <ul className='workListLayout'>
-          {ctgr===0?
-            workList.map((val,idx)=>
+          {workList.map((val,idx)=>
+            ctgr===0?
+              <li key={idx} className='workBtnLayout'>
+                <div className='workBtn' onClick={()=>handleGoLink(val.link1)}>
+                  <div className='workBtnBorder1'></div>
+                  <div className='workBtnBorder2'></div>
+                  <div className='workBtnBorder3'></div>
+                  <div className='workBtnBorder4'></div>
+
+                  <img src={val.img} className='workImg' alt=''></img>
+                </div>
+
+                <div className='workTitle'>
+                  {val.name}
+                </div>
+                <div className='workGoLinkBar'>
+                  {val.link1===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link1)}>
+                    <img src={imgSite} alt=''/> Go site
+                  </div>}
+                  {val.link2===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link2)}>
+                    <img src={icYoutube} alt=''/> Youtube
+                  </div>}
+                  {val.link3===''?<></>:
+                  <div className='workGoLink' onClick={()=>handleGoLink(val.link3)}>
+                    <img src={imgCodepen} alt=''/> Codepen
+                  </div>}
+                </div>
+              </li>
+            :
+            val.ct.filter((fval)=>fval===ctgr).map((vval,vvidx)=>
               <li key={idx} className='workBtnLayout'>
                 <div className='workBtn' onClick={()=>handleGoLink(val.link1)}>
                   <div className='workBtnBorder1'></div>
@@ -154,41 +201,13 @@ const Main =  (()=> {
                 </div>
               </li>
             )
-            :
-            workList.filter((vval=>vval.ctgrIdx===ctgr)).map((val,idx)=>
-              <li key={idx} className='workBtnLayout'>
-                <div className='workBtn' onClick={()=>handleGoLink(val.link1)}>
-                  <div className='workBtnBorder1'></div>
-                  <div className='workBtnBorder2'></div>
-                  <div className='workBtnBorder3'></div>
-                  <div className='workBtnBorder4'></div>
-
-                  <img src={val.img} className='workImg' alt=''></img>
-                </div>
-
-                <div className='workTitle'>
-                  {val.name}
-                </div>
-                <div className='workGoLinkBar'>
-                  {val.link1===''?<></>:
-                  <div className='workGoLink' onClick={()=>handleGoLink(val.link1)}>
-                    <img src={imgSite} alt=''/> Go site
-                  </div>}
-                  {val.link2===''?<></>:
-                  <div className='workGoLink' onClick={()=>handleGoLink(val.link2)}>
-                    <img src={icYoutube} alt=''/> Youtube
-                  </div>}
-                  {val.link3===''?<></>:
-                  <div className='workGoLink' onClick={()=>handleGoLink(val.link3)}>
-                    <img src={imgCodepen} alt=''/> Codepen
-                  </div>}
-                </div>
-              </li>)
-            }
+          )}
         </ul>
-       
+
+         
         
-        {ctgr!==0 && workList.filter((vval=>vval.ctgrIdx===ctgr)).length===0?
+        
+        {ctgrLenght() === 'ㅇㅇ'?
           <section className='worklistNull'>
             <div className='worklistNullTitle'>
               {`if(작업리스트.length === 0){`}<br/>
