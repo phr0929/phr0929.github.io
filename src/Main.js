@@ -42,7 +42,7 @@ const Main =  (()=> {
 
   // ctgrIdx 1=Web Page 2=CSS Drawing 3=CSS Basic 4=Etc.
   const workList = [
-    {ct:[1,2],name:'CSS로 짱구 그리기 / 옷입히기 만들기',img:imgWork6,link1:'https://phr0929.github.io/drawing/#/zzanggu',link2:'',link3:'https://codepen.io/njurvxuu-the-reactor/pen/zYMNydB'},
+    {ct:[1,2],name:'CSS로 짱구 그리기 / 옷입히기 만들기',img:imgWork6,link1:'https://phr0929.github.io/drawing/#/zzanggu',link2:'https://youtube.com/shorts/i_QjijQDFco?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/zYMNydB'},
     {ct:[1],name:'카카오톡 스타일 MBTI 테스트',img:imgWork1,link1:'https://phr0929.github.io/mbti',link2:'https://youtu.be/zO7xOq8wzrM',link3:''},
     {ct:[1],name:'To Do List',img:imgWork2,link1:'https://phr0929.github.io/todolist',link2:'',link3:''},
     {ct:[2],name:'CSS로 강아지 그리기',img:imgWork3,link1:'https://phr0929.github.io/drawing/#/pomeranian',link2:'https://youtube.com/shorts/lk4FGmQevAE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/embed/yLQONpW?default-tab=html%2Cresult'},
