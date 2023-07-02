@@ -42,9 +42,10 @@ const Main =  (()=> {
 
   // ctgrIdx 1=Web Page 2=CSS Drawing 3=CSS Basic 4=Etc.
   const workList = [
+    {ct:[1],name:'CSS로 피카츄 그리기',img:imgWork6,link1:'https://phr0929.github.io/drawing/#/pikachu',link2:'',link3:'https://codepen.io/njurvxuu-the-reactor/pen/vYQZOWa'},
     {ct:[1,2],name:'CSS로 짱구 그리기 / 옷입히기 만들기',img:imgWork6,link1:'https://phr0929.github.io/drawing/#/zzanggu',link2:'https://youtube.com/shorts/i_QjijQDFco?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/zYMNydB'},
     {ct:[1],name:'카카오톡 스타일 MBTI 테스트',img:imgWork1,link1:'https://phr0929.github.io/mbti',link2:'https://youtu.be/zO7xOq8wzrM',link3:''},
-    {ct:[1],name:'To Do List',img:imgWork2,link1:'https://phr0929.github.io/todolist',link2:'',link3:''},
+    {ct:[1],name:'To Do List',img:imgWork2,link1:'https://phr0929.github.io/todolist',link2:'https://youtu.be/PQIXOLt2TrM',link3:'https://codepen.io/njurvxuu-the-reactor/pen/QWJpqzd'},
     {ct:[2],name:'CSS로 강아지 그리기',img:imgWork3,link1:'https://phr0929.github.io/drawing/#/pomeranian',link2:'https://youtube.com/shorts/lk4FGmQevAE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/embed/yLQONpW?default-tab=html%2Cresult'},
     {ct:[2],name:'CSS로 햄버거 그리기',img:imgWork4,link1:'https://phr0929.github.io/drawing/#/hamburger',link2:'https://youtube.com/shorts/TYM40Vo58EE?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/wvQGPEv'},
     {ct:[2],name:'CSS로 컵케이크 그리기',img:imgWork5,link1:'https://phr0929.github.io/drawing/#/cupcake',link2:'https://youtube.com/shorts/rMdvvniu7Xc?feature=share',link3:'https://codepen.io/njurvxuu-the-reactor/pen/mdQEjyp'},
