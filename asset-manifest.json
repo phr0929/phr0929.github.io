@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.347d662f.css",
-    "main.js": "/static/js/main.a77e5690.js",
+    "main.js": "/static/js/main.f1269121.js",
     "static/js/787.ec704a7a.chunk.js": "/static/js/787.ec704a7a.chunk.js",
     "static/media/mainimg.webp": "/static/media/mainimg.10019dcbdae2b3fc1147.webp",
     "static/media/work5.webp": "/static/media/work5.9680d853d2d7e36aaebc.webp",
@@ -9,6 +9,7 @@
     "static/media/work1.webp": "/static/media/work1.a11143d67adbb8e65947.webp",
     "static/media/work6.webp": "/static/media/work6.399a7a04032aaeda2c7c.webp",
     "static/media/work3.webp": "/static/media/work3.4aba920e5d81faba027e.webp",
+    "static/media/work7.webp": "/static/media/work7.88947343afcd457f4ab1.webp",
     "static/media/work2.webp": "/static/media/work2.76609f45b089978a014e.webp",
     "static/media/myLogo.png": "/static/media/myLogo.1a58deaf36a19de96920.png",
     "static/media/avatar.svg": "/static/media/avatar.4e9d5a29f894ee51cf74d69e9d173d5c.svg",
@@ -44,11 +45,11 @@
     "index.html": "/index.html",
     "static/media/icFacebook.svg": "/static/media/icFacebook.056db53ccbc13fb9cdb48b7556253126.svg",
     "main.347d662f.css.map": "/static/css/main.347d662f.css.map",
-    "main.a77e5690.js.map": "/static/js/main.a77e5690.js.map",
+    "main.f1269121.js.map": "/static/js/main.f1269121.js.map",
     "787.ec704a7a.chunk.js.map": "/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.347d662f.css",
-    "static/js/main.a77e5690.js"
+    "static/js/main.f1269121.js"
   ]
 }
